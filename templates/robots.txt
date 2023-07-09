@@ -1,0 +1,12 @@
+Sitemap: https://www.affluencemarketreports.com/sitemap.xml
+
+User-agent: *
+Disallow: /industry-analysis/request-sample/*
+Disallow: /industry-analysis/request-discount/*
+Disallow: /industry-analysis/request-inquiry/*
+Disallow: /industry-analysis/covid19-request/*
+Disallow: /industry-analysis/checkout/*
+Disallow: /publisher/*
+Disallow: /become-publisher/*
+Disallow: /search-reports/*
+Disallow: /admin/

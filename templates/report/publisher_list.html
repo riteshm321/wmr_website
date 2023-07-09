@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} Publisher Listing Page {% endblock %}
+{% block body %}
+
+<div class="text-center">
+	<h1 class="head-after h1fs">Publishers</h1>
+</div>
+<div class="container mt-4">
+   <div class="row">
+       {% for publisher in publishers %}
+       <div class="col-lg-3 col-6">
+            <div class="mb-3 text-center">
+										<a href="{% url 'publisher' publisher.slug %}">
+											<div class="card-img-top img-hover-zoom">
+											<img alt="{{publisher.name | title }}" title=" {{publisher.name | title }}" src="{{publisher.image.url}}" height="75px" width="150px">
+										     </div>
+										</a>
+									</div>
+									<h3 class="text-center" ><a href="{% url 'publisher' publisher.slug %}" style="color:#0b9ad7;">
+										<span><strong>{{publisher.name}}</strong></span>
+									</a></h3>
+       </div>
+       {% endfor %}
+
+
+
+  </div>
+
+</div>
+
+
+
+{% endblock %}

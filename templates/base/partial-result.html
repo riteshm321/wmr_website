@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+     {% if searchreports %}
+     <div class="searchdiv" style="overflow-y: scroll;position: absolute;z-index: 99;max-height: 300px;">
+     <table class="table table-bordered table-hover" style="background-color:#0b9ad7">
+
+			 {% for report in searchreports %}
+           <tr>
+               <td> <a href="{% url 'reports:reportpage' report.slug %}" style="color:white;">{{ report.title }}</a></td>
+           </tr>
+			 {% endfor %}
+
+     </table>
+     </div>
+			{% else %}
+<!--		  <p>No Report found.</p>-->
+     {% endif %}
+
+     <script type="text/javascript">
+        $(document).mouseup(function (e) {
+            if ($(e.target).closest(".searchdiv").length === 0) {
+                $(".searchdiv").hide();
+            }
+        });
+    </script>

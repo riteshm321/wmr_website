@@ -1,0 +1,196 @@
+
+
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+}
+
+@media (min-width: 576px) { ... }
+
+/*Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px){
+
+		#top-header .t-head-left li a {font-size: 13px;}
+		#top-header .t-head-left li {margin-right: 0;display: flex;}
+		#top-header ul{text-align: left;}
+		a.btn.btn-primary.contNBtn {
+			padding: 5px;
+			margin-bottom: 10px;
+		}
+		.dropdown-menu.multi-column {
+			min-width: 240px !important;
+			overflow-x: hidden;
+		}
+		.txt-center{text-align: center;}
+		.mb-xs-3{margin-bottom: 15px;}
+		.card{margin-bottom: 10px;}
+		#carouselExampleIndicators .carousel-caption{top: 35%;}
+		#carouselExampleIndicators h3{font-size: 25px}
+		.search_mob .container {padding: 0;}
+		#carouselExampleIndicators .carousel-caption {width: 80%;text-align: center;}
+		.carousel-control-next-icon, .carousel-control-prev-icon {padding: 15px;}
+		.carousel-control-next, .carousel-control-prev{width: 8%}
+		#carouselExampleIndicators .carousel-caption .btn{margin-right: 0}
+		.search_mob .card-d {padding: 5px;}
+		#body-container{padding: 0;}
+		.breadcum_list {padding: 0 15px;}
+		.rd-cat li{margin-top: 10px}
+		#calltoac {padding-top: 0px;}
+		.btncut{padding: 12px;font-size: 16px;font-weight: normal;width: 75%}
+		.btncut:after{width: 85%;transform: translateX(-85%) translateY(-25%) rotate(45deg);}
+		#calltoac a{width: 100%}
+		ul#pills-tab {flex-wrap: unset;margin: 0 5px}
+		#pills-tab .nav-item{margin-left: 0;font-weight: normal!important;}
+		.rep-det-tabs .nav-link {font-weight: normal;padding: 5px 0;text-align: center;line-height: 21px;border-radius: 0}
+		#top-header{margin: 0!important;}
+		.breadcum_list ol.breadcrumb{margin: 0}
+		.tab-content{padding: 15px;text-align: left;}
+		#testimonials .titem-img{text-align: center;}
+		div#t-carousel .w-100 {max-width: 40%!important;}
+		div#aboutt p {text-align: left;}
+		div#aboutt ul li {text-align: left;list-style: disc;margin-left: 15px;}
+		.btn.button-three{width: 100%;}
+		.btn.button-three i.icon-shopping-cart {font-size: 25px;padding: 0 5px;}
+		.reportdet .card-d{margin-bottom: 0!important}
+
+		.mob_form:hover, .mob_form{background: none;margin: 10px;position: relative;}
+		.mob_form .col-lg-12 {padding: 0;}
+		.mob_form input, .mob_form select#country, .mob_form textarea {border: 1px solid #ccc;
+		height: 34px;
+		padding: 8px 12px;
+		font-size: 14px;
+		line-height: 1.42857143;
+		color: #555;
+		background-color: #fff;
+		border-radius: 4px;
+		min-height: 45px;}
+		.mob_form .contactuslabel {color: #6f6f6f;font-weight: 600;}
+		.form_header{display: block!important;margin-bottom: 30px}
+		.form_header h2 {
+		font-size: 23px;
+		padding-top: 4px;
+		margin-bottom: 0;
+		color: #000000;
+	}
+	.card.mob_form:hover h1, .card.mob_form:hover h2, .card.mob_form:hover h3, .card.mob_form:hover h4, .card.mob_form:hover h5, .card.mob_form:hover p, .card.mob_form:hover i, .card.mob_form:hover a, .card.mob_form:hover li {
+		color: #000000;
+	}
+	.mob_form .col-sm-3 .form-group {margin-bottom: 0;}
+	.rd-report-radio {
+		text-align: left!important;
+		display: inline-flex;
+		
+	}
+	#radio .rd-report-radio input {
+		padding-left: 5px;
+		width: 25px;
+		height: 25px;
+	}
+	.mob_form input#submit {
+		width: 100%;
+		font-size: 18px;
+		font-weight: 600;
+		background: #2983e4;
+		border-radius: 100px;
+		color: white;
+		max-width: 70%;
+	}
+
+	.form_header:before {content: "";position: absolute;width: 50px;height: 2px;background: #2983e4;top: 85px;left: 0;right: 0;margin: auto;}
+	.sample_form:before {top: 110px;}
+	#carouselExampleIndicators .carousel-item {height: 90px;}
+	.side-nav-bar li a{padding: 7px 30px}
+	.side-nav-bar li:before{line-height: 35px}
+	.fordesktop{display: none!important;}
+	.formob_pri{display: block;}
+	label.report-radio {
+		color: #6f6f6f!important;
+	}
+	#about-us h3{font-size: 18px}
+	#formob_searchBox{display: block;}
+
+	li.nav-item.search_btn{display: none;}
+	.searchBox_sect .container,.searchBox_sect .card-d{padding: 0}
+	.searchBox_sect .card-d{padding: 0;margin-bottom: 0;box-shadow: 0 0 10px 0 #636363;}
+	.searchBox_inner{margin-top: 0}
+	.fordesktop_pri{display: none;}
+	.breadcum_list ol.breadcrumb li.breadcrumb-item a {
+		color: #0b9ad7;
+		text-decoration: underline;
+	}
+	.breadcum_list {
+		background: #444;
+		color: white;
+	}
+	.banner_search .container {
+		padding: 0;
+	}
+
+	.banner_search {
+		width: 90%!important;
+		top: 19%!important;
+	}
+}
+
+/*Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) { ... }
+
+/*Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199.98px) { ... }
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	li.nav-item.search_btn {display: none;}
+	#body-container{padding: 0 10px}
+	.fordesktop_pri{display: none;}
+	.formob_pri{display: block;}
+	.rep-det-tabs .nav-link {
+    font-weight: normal;
+    padding: 8px 15px;
+    text-align: center;
+    line-height: 21px;
+    border-radius: 0;
+}
+#pills-tab .nav-item {
+    margin-left: 0;
+    font-weight: normal!important;
+}
+.breadcum_list ol.breadcrumb li.breadcrumb-item a {
+    color: white;
+    text-decoration: underline;
+}
+.breadcum_list {
+    background: #444;
+    color: white;
+    padding: 0 15px;
+}
+
+#calltoac a { margin-right: 0px; }
+
+.covid19Banner_info h2 {
+	font-size: 30px;
+}
+.covid19Banner {
+	height: auto;
+	background-position: center center;
+}
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+.formob_searchBox{display: none}
+.formob_pri{display: none;}
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	#formob_searchBox{display: none;}
+	.formob_pri{display: none;}
+}

@@ -1,0 +1,92 @@
+
+
+
+/*==================
+	Author: Avisitz
+	Author URI: https://themeforest.net/user/denthemes
+	Description: Corporate Business Consulting Services HTML5 Template
+==================*/
+
+/**=========================
+[Table of contents]
+
+1. COLORS
+2. BACKGROUND
+   background light
+3. BORDER
+=========================**/
+
+/**=========================
+	START COLORS
+=========================**/
+#top-header .t-head-left i,
+.color-primary,
+#header .navbar-brand span,
+#header .nav-item.active a,
+#header .nav-item a:hover,
+#header .nav-item.active a:before,
+#header .nav-item a:hover:before,
+#header .dropdown-menu:before,
+.breadcrumb-bg li a,
+#top-header .t-head-right a:hover,
+#testimonials .titem-img:before,
+.pagination .page-link,
+#our-blog .card-d a:hover,
+#footer a:hover,
+#footer .f-m-icons li a:hover i,
+#sub-footer a{
+	color: #2983e4;
+}
+/**=========================
+	END COLORS
+=========================**/
+
+/**=========================
+	START BACKGROUND
+=========================**/
+::-webkit-scrollbar-thumb,
+::selection,
+.loader,
+.btn-primary,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-border:hover,
+.carousel-indicators .active,
+.backto-top-btn a,
+.head-after:after,
+#header .navbar-toggler,
+#about-us .col-before:before,
+.owl-theme .owl-controls .owl-pagination .owl-page span,
+.get-services-bg:before,
+#header .dropdown-menu .dropdown-item:hover,
+#header .dropdown.active .dropdown-menu .dropdown-item:hover,
+#header .dropdown.active .dropdown-menu .dropdown-item.active,
+.side-nav-bar li a:hover,
+.side-nav-bar li.active a,
+.time-bg:after,
+.badge-primary,
+.page-item.active .page-link{
+	background-color: #0b9ad7;
+}
+/*light*/
+.btn-primary:hover{
+	background-color: #0b9ad7;
+}
+/**=========================
+	END BACKGROUND
+=========================**/
+
+/**=========================
+	START BORDER
+=========================**/
+.btn-primary,
+.btn-primary:hover,
+.btn-border,
+.form-control:focus,
+.form-control:active,
+.page-item.active .page-link{
+	border-color: #0b9ad7;
+}
+/**=========================
+	END BORDER
+=========================**/

@@ -1,0 +1,155 @@
+
+
+
+{% load static %}
+<html lang="en">
+
+
+<head>
+<title>{% block title %}Wisdom Market Research | Latest Research Insights | Analysis Reports{% endblock %}</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="canonical" href="index.html"/>
+<meta name="description" content="Wisdom Market Research offers detailed business research reports with in-depth strategic insights on varied industry verticals to meet all your business need."><meta name="keywords" content="Wisdom Market Research, SMI, Research and Consulting, Business Research, Market Research reports, business consulting services, Competitive Analysis, Industry Analysis, Market Intelligence, top market research companies"><meta name="document-type" content="Public"/>
+<meta name="Page-Topic" content="Market Research Reports"/>
+<meta name="copyright" content="Wisdom Market Research"/>
+<meta name="classification" content="market research reports"/>
+<meta name="document-classification" content="Market Research Reports Services"/>
+<meta name="distribution" content="global"/>
+<meta name="coverage" content="global"/>
+<meta name="abstract" content="market research reports, consulting services, industry analysis and reports"/>
+
+<meta name="Audience" content="All, Business, Management, Research, Services"/>
+<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet"/>
+   <link href="{% static 'css/amr.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/css/colors/default-color.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/css/theme-responsive.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/css/animation.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/css/owl.carousel.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/css/owl.transitions.css' %}" rel="stylesheet"/>
+<link href="{% static 'assets/font-awesome/css/fontawesome.min.css' %}" rel="stylesheet"/>
+	<link href="{% static 'assets/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="{% static 'assets/css/media.css' %}" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+<meta property="og:url" content="index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Wisdom Market Research | Latest Industry Insights"/>
+<meta property="og:description" content="Wisdom Market Research offers detailed business research reports with in-depth strategic insights on varied industry verticals to meet all your business need."/>
+<meta property="og:image" content="images/logos.png"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174031289-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-174031289-1');
+</script>
+</head>
+<body>
+
+{% block body %}
+
+{% endblock %}
+
+
+
+<div class="continer-fluid">
+	<div class="jumbotron text-center" style="background-color:#000000">
+              <h3 style="color:#0b9ad7">Subscribe Newsletter</h3>
+		<p class="lead"><input type="text" placeholder="  Enter Your Email" style="height:40px;width:350px">&nbsp;&nbsp;<a class="btn btn-primary" href="{% url 'index' %}" role="button"><strong>Subscribe</strong></a></p>
+              <hr>
+
+            </div>
+</div>
+<div id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 mb-2">
+				<a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/WMR_logo.png' %}" class="smi_logo" alt="Wisdom Market Research" title="Wisdom Market Research" height="80px"></a>
+				<div class="mt-3">
+					<p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+1-424-256-1722">IND:&nbsp; +91 8591633987</a></h5>
+<!--                    <p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+44 1158 88 1333">U.K:&nbsp; +44 1158 88 1333</a></h5>-->
+
+					<h5><i class="icon-envelope"></i><a href='mailto:sales@wisdommarketresearch.com'> &nbsp;<span class="__cf_email__" >sales@wisdommarketresearch.com</span></a></h5></p>
+					<ul class="f-m-icons">
+						<li><a href="https://www.facebook.com/affluencemarketreports/" rel="nofollow"><img src="{% static 'images/facebook.png'%}"></a></li>
+						<li><a href="https://twitter.com/AffluenceReport" rel="nofollow"><img src="{% static 'images/twitter.png'%}"></a></li>
+						<li><a href="https://www.linkedin.com/company/affluencemarketreports" rel="nofollow"><img src="{% static 'images/linkedin.png'%}"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-2 mb-3">
+				<h3 class="head-after">Menu</h3>
+				  <div class="mt-2">
+					<ul>
+						<li><a href="{% url 'aboutus' %}">About Us</a></li>
+						<li><a href="{% url 'latestreports' %}">Latest Reports</a></li>
+						<li><a href="{% url 'becomepublisher' %}" rel="nofollow">Publisher Partnership</a></li>
+						<li><a href="{% url 'privacypolicy' %}" rel="nofollow">Privacy Policy</a></li>
+						<li><a href="{% url 'termsandconditions' %}" rel="nofollow">Terms & Conditions</a></li>
+						<li><a href="{% url 'contactus' %}">Contact Us</a></li>
+
+					</ul>
+
+
+				  </div>
+			</div>
+
+
+			<div class="col-lg-6 mb-3 text-left">
+                      <h3 class="head-after"></h3>
+				<div class="mt-3 footer-contact">
+					<br>
+					<img src="{% static 'images/payment-logo.png'%}"/>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="sub-footer" class="sub-footer-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 text-left">
+				<p><b> &copy; 2021 Wisdom Market Research. All rights reserved</b></p>
+			</div>
+			<div class="col-lg-6 text-right" id="ftpd">
+<!--				<p>Powered by <b>Worldwide Market Reports.</b></p>-->
+			</div>
+		</div>
+	</div>
+</div>
+<div class="backto-top-btn">
+<span class="top-btn btn btn-primary"><i class="icon-chevron-sign-up icon-2x"></i></span>
+</div>
+ <script src="{% static 'assets/js/jquery-1.11.1.min.js' %}"></script>
+				<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+				<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+				<script src="{% static 'assets/js/counter/counter.js' %}"></script>
+				<script src="{% static 'assets/js/common-script.js' %}"></script>
+				<script src="{% static 'assets/js/readmore.min.js' %}"></script>
+				<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+				<script src="{% static 'assets/js/bxslide.js' %}"></script>
+				<script src="{% static 'assets/js/bxjs.js' %}"></script>
+                <script src="{% static 'js/all.min.js' %}"></script>
+				<script src="{% static 'js/custom.js' %}"></script>
+<!--                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
+    <script type='text/javascript' src="{% static 'js/amr.js' %}"></script>
+</body>
+
+</html>

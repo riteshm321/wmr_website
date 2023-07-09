@@ -1,0 +1,83 @@
+
+
+{% extends 'base.html'%}
+
+
+{% block title %} Request Discount | Affluence Market Report {% endblock %}
+{% block body %}
+<body>
+
+<div class="container">
+<div class="breadcum_list1">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb" style="background-color:white;">
+	<li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+	<li class="breadcrumb-item"><a href="{% url 'reports:reportpage' report.slug %}">{{report.meta_title | title}}</a></li>
+	<li class="breadcrumb-item active" aria-current="page">Request Discount</li>
+</ol>
+</nav>
+</div>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+			<div class="card">
+					  <div class="card-header" style="background-color:#0b9ad7;">
+						 <h5 style="color:white;">{{report.title | title}}</h5>
+					  </div>
+					  <div class="card-body">
+						<form method="post">
+
+                             <h4>{{form.errors}}</h4>
+						{% csrf_token %}
+						{{form.full_name}}
+						{{form.corporate_email}}
+						{{ form.country }}
+						{{ form.phone }}
+						{{ form.job_title }}
+						{{ form.company }}
+						{{ form.comment }}
+						<button type='submit' class='btn btn-primary'><strong>Submit</strong></button>
+<!--							<button type="submit" class="btn btn-primary">Go somewhere</button>-->
+
+					 </form>
+
+					  </div>
+					</div>
+        </div>
+        <div class="col-lg-4 col-md-8 col-sm-12">
+          <div class="card">
+                  <div class="card-header" style="background-color:#0b9ad7;color:white">
+                      <strong>Why Choose Us ?</strong>
+                  </div>
+                  <div class="card-body" >
+
+                      <p class="card-text">24/7 Research support</p>
+                      <p class="card-text">Quality assurance</p>
+                      <p class="card-text">Information security</p>
+
+
+
+                  </div>
+          </div>
+              <div class="card">
+                  <div class="card-header" style="background-color:#0b9ad7;color:white">
+                      <strong>Support</strong>
+                  </div>
+                  <div class="card-body" >
+ <p><i class="icon-phone"></i>&nbsp; U.S: <a href="tel:+1-424-256-1722">&nbsp; +1-(424) 256-1722</a></p>
+						  <p><i class="icon-phone"></i>&nbsp; U.K:<a href="tel:+44 1158 88 1333">&nbsp; +44 1158 88 1333</a></h5></p>
+
+						  <p><i class="icon-envelope"></i><a href='mailto:sales@wisdommarketresearch.com'> &nbsp;<span class="__cf_email__" >sales@wisdommarketresearch.com</span></a></p>
+
+
+
+
+                  </div>
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+{%endblock%}

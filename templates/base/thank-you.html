@@ -1,0 +1,22 @@
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Thank You | Affluence Market Report {% endblock %}
+{% block body %}
+    <div class="container">
+    	<div class="jumbotron text-center">
+              <h1 class="display-3">Thank You!!</h1>
+              <p class="lead"><strong>Our Sales Representitive will soon get Back to you.</strong> </p>
+              <hr>
+              <p>
+                Having trouble? <a href="{% url 'contactus' %}" style="color:blue">Contact us</a>
+              </p>
+              <p class="lead">
+                <a class="btn btn-primary " href="{% url 'index' %}" role="button">Continue to homepage</a>
+              </p>
+            </div>
+    </div>
+{% endblock %}
+

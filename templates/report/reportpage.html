@@ -1,0 +1,439 @@
+
+
+
+
+{% extends 'base-report.html' %}
+{% load static %}
+
+{% block title %} {{report.meta_title}}{% endblock %}
+
+{% block body %}
+<div id="top-header" style="background:white;">
+    <div id="header">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/WMR_logo.png' %}" class="smi_logo" alt="Affluence Market Reports" title="Affluence Market Reports" height="70px"></a>
+			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			</button> -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto" id="mmenu">
+						<li class="nav-item">
+							<a class="nav-link menu-top-active" href="{% url 'index' %}" >Home</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+							<ul class="dropdown-menu multi-column columns-2">
+								<div class="row">
+
+											{% for category in categories1 %}
+											<div class="col-sm-6">
+												<ul class="multi-column-dropdown">
+
+                                                    <li><a class="dropdown-item" href="{% url 'category' category.slug %}"><strong>{{category.name }}</strong></a></li>
+
+
+												</ul>
+											</div>
+											{% endfor %}
+
+
+									{% for category in categories2 %}
+									<div class="col-sm-6">
+										<ul class="multi-column-dropdown">
+                                            <li><a class="dropdown-item" href="{% url 'category' category.slug %}"><strong>{{category.name | title }}</strong></a></li>
+
+										</ul>
+									</div>
+									{% endfor %}
+								</div>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'publisher_list' %}">Publishers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'latestreports' %}">Latest Reports</a>
+						</li>
+                       <li class="nav-item dropdown">
+						   <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">About Us</a>
+							<ul class="dropdown-menu" style="min-width:5rem;font-size: 14px;background-color:#fff;">
+								<li><a class="dropdown-item" href="{% url 'aboutus' %}"><strong>About WMR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></a></li>
+								<li><a class="dropdown-item" href="{% url 'services' %}"><strong>Our Services&nbsp;&nbsp;&nbsp;&nbsp;</strong></a></li>
+                                <li><a class="dropdown-item" href="{% url 'contactus' %}"><strong>Contact us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></a></li>
+							</ul>
+						</li>
+                        <li class="nav-item mt-4">
+
+<!--							<form class="navbar-form" role="search" method="get" action="{% url 'search_report_list' %}">-->
+<!--					           <div class="input-group">-->
+<!--								   <input type="text" class="form-control" placeholder="Search Reports" name="searchquery" value="{{request.GET.searchquery}}" id="srch-term" style="height:30px;width:250px;border-radius:30px 0px 0px 30px;">-->
+<!--								   <div class="input-group-btn">-->
+<!--								   <button class="btn btn-default mt-0 mr-3" type="submit" style="background-color:#e9edf5;border-radius: 0px 30px 30px 0px; cursor:pointer;height:30px;outline:none;box-shadow:none;"><i class="fas fa-search" style="color:black;"></i></button>-->
+<!--						           </div>-->
+<!--								</div>-->
+<!--					         </form>-->
+                            <div class="wrapper1">
+							    <form role="search" method="get" class="search-form form" action="">
+								<label>
+									<span class="screen-reader-text">Search for...</span>
+									<input type="search" class="search-field" placeholder="Search report..." value="" name="s" title="" />
+								</label>
+								<input type="submit" class="search-submit button" value="&#xf002" />
+									</form>
+							</div>
+						</li>
+
+
+					</ul>
+					<ul class="navbar-nav ml-auto" id="mrpt">
+						<li class="nav-item"><a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></button></a></li>
+						<li class="nav-item"> <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-danger"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a></li>
+						<li class="nav-item"><a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-info"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buying</strong></span></button> </b> </a></li>
+<!--						<li class="nav-item"><a href="#"><b><button class="btncut"><span><i class="icon-user"></i> &nbsp; Speak To Analyst</span></button> </b> </a></li>-->
+					</ul>
+				</div>
+		</nav>
+	</div>
+  </div>
+</div>
+
+<style>#top-header{margin:0 0 10px 0}.header-fixed{position:fixed;width:100%;background-color:#f1f1f1;top:0;z-index:999;box-shadow:0 0 20px 0 #ddd}</style><div id="body-container">
+<div class="container">
+    <div class="row">
+<div class="col-lg-9 col-12 reportdet">
+<div class="breadcum_list">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb" style="background-color:white;">
+<li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+<!--<li class="breadcrumb-item"><a href="{% url 'category' category.slug %}">{{report.category.name}}</a></li>-->
+<li class="breadcrumb-item active" aria-current="page">{{report.meta_title | title }}</li>
+</ol>
+</nav>
+</div>
+<div class="media_box mb-2">
+<div class="media ">
+<img src="{% static 'images/research 1.jpg' %}" height="200px" width="160px" alt="Market Research Report" title="Market Research Report" class="align-self-start mr-4 d-none d-sm-block img-responsive">
+<div class="media-body" >
+  <h1 class="rd-page-title">
+	{{report.title}}	</h1>
+	<ul class="list-inline rd-cat">
+	<li class="list-inline-item"><b>WMR ID</b> : {{report.publisher.publisher_code}}-{{report.id}}</li>
+        <li class="list-inline-item"><b>CAT ID</b> : {{report.category.id}}</li>
+	<li class="list-inline-item"><b>Pages</b> : {{report.no_of_pages}}</li>	<li class="list-inline-item"><b>Date</b> : {{report.published_date | date:"M Y"}}</li>
+
+<!--		<li><span><b>Publisher</b> : {{report.publisher.name}}</span></li>-->
+	</ul>
+	<div id="calltoac">
+        <a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></button></a>
+        <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-danger"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a>
+        <a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-info"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buying</strong></span></button> </b> </a>
+        <a href="{% url 'reports:covidrequest' report.id %}"><button class="btn btn-danger" style="background-color:#0b9ad7;border:none;"><span> &nbsp;<strong>COVID-19 Impact Analysis</strong> </span></button></a>
+	</div>
+</div>
+</div>
+</div>
+
+
+<div class="clearfix">&nbsp;</div>
+<ul class="nav nav-pills rep-det-tabs" id="pills-tab" role="tablist">
+<li class="nav-item">
+	<a class="nav-link active" id="rep-overview-tab" data-toggle="pill" href="#rep-overview" role="tab" aria-controls="rep-overview" aria-selected="true">Report Summary</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" id="rep-toc-tab" data-toggle="pill" href="#rep-toc" role="tab" aria-controls="rep-toc" aria-selected="false">Table of Content</a>
+</li>
+    {% if report.list_of_figures %}
+    <li class="nav-item">
+	<a class="nav-link" id="rep-fig-tab" data-toggle="pill" href="#rep-fig" role="tab" aria-controls="rep-fig" aria-selected="false">List of Figures</a>
+</li>
+    {% endif %}
+<li class="nav-item">
+	<a class="nav-link" id="rel-rep-tab" data-toggle="pill" href="#rel-rep" role="tab" aria-controls="rel-rep" aria-selected="false">Related Reports</a>
+</li>
+
+
+</ul>
+<div class="tab-content rep-rd-content tab-wrapper" id="pills-tabContent">
+<div class="tab-pane fade active show" id="rep-overview" role="tabpanel" aria-labelledby="rep-overview-tab">
+
+<p>{{report.summary | safe | linebreaks }}</p>
+
+</div>
+<div class="tab-pane fade" id="rep-toc" role="tabpanel" aria-labelledby="rep-toc-tab">
+	{{report.tabel_of_content | safe | linebreaks }}</div>
+
+    {% if report.list_of_figures %}
+    <div class="tab-pane fade" id="rep-fig" role="tabpanel" aria-labelledby="rep-fig-tab">
+	<p>{{report.list_of_figures | safe | linebreaks }}</p></div>
+    {% endif %}
+
+<div class="tab-pane fade" id="rel-rep" role="tabpanel" aria-labelledby="rel-rep-tab">
+     {% for report in cat_report %}
+<div class="row">
+ <div class="col-lg-12">
+ <article class="post reportsList">
+ 	 <div class="panel panel-default">
+	  <div class="panel-body">
+                  <div class="row">
+                  <div class="col-lg-3 col-sm-3">
+                  <div class="reportsImg">
+                  <a href="#"> <img src="{% static 'images/market-report.jpg' %}" height="200px" width="170px"  alt="Market Research Report" title="Market Research Report" class="img-post img-responsive"></a>
+                 </div>
+                </div>
+                  <div class="col-lg-9 col-sm-9 post-content">
+                    <h3 class="post-title reportsTitle">
+                    <a href="{% url 'reports:reportpage' report.slug %}" class="transicion">{{report.title}}</a>
+                    </h3>
+                    <div class="reportsContent">
+                    <table class="table table-bordered">
+                    <tbody><tr>
+                       <td> <i class="fa fa-user"></i> &nbsp; Price : US ${{report.single_user_price}}</td>
+
+                       <td><i class="fa fa-calendar"></i> &nbsp; Date : {{report.published_date | date:"M Y"}}</td>
+                    </tr>
+                    <tr>
+                    <td><i class="fa fa-user"></i> &nbsp; CAT ID : {{report.category.name}}</td>
+                    <td><i class="fa fa-file"></i> &nbsp;  Pages : {{report.no_of_pages}}</td>
+                    </tr>
+                    </tbody></table>
+                     <a class="btn btn-primary vert btn btn-primary" href="{% url 'reports:reportpage' report.slug %}">View Report
+                    </a>
+                    </div>
+
+                   </div>
+
+                  </div>
+
+	 </div>
+
+	</div>
+
+	</article>
+</div>
+</div>
+     {% endfor %}
+</div>
+</div>
+<div class="clearfix">&nbsp;</div>
+</div>
+        <div class="col-lg-3 col-md-12 col-sm-12 mt-5">
+            <div class="card">
+                  <div class="card-header" style="background-color:#0b9ad7;color:white">
+                      <strong>Choose License Type</strong>
+                  </div>
+                  <div class="card-body" >
+                      <form method="post" action="{% url 'reports:checkout' report.id %}">
+                          {% csrf_token %}
+                      <p class="card-text"><input type="radio" name="price" checked="checked" value="{{report.single_user_price}}"> Single User :   <strong>${{report.single_user_price}}</strong></p>
+                    <hr>
+                          <p class="card-text" ><input type="radio" name="price" value="{{report.corporate_user_price}}"> Corporate User : <strong>${{report.corporate_user_price}}</strong></p>
+                     <hr style="color:white;">
+<!--       <button type="submit" class="btn btn-primary btn-block" style="background-color:#f39c12; border-color:#f39c12"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>-->
+                       <button type="submit" class="button-animated btn-block"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>
+                      </form>
+                  </div>
+          </div>
+
+         <div class="card sticky-top" style="top: 100px;z-index:9;">
+                  <div class="card-header" style="background-color:#0b9ad7;color:white">
+                      <strong>Request Sample Report</strong>
+                  </div>
+                  <div class="card-body" >
+                      <form method="post">
+                          <h4>{{form.errors}}</h4>
+						{% csrf_token %}
+						{{form.full_name}}
+						{{form.corporate_email}}
+						{{ form.country }}
+						{{ form.phone }}
+						{{ form.job_title }}
+						{{ form.company }}
+						{{ form.comment }}
+						<button type='submit' class='btn btn-primary align-middle'><strong>Submit</strong></button>
+<!--							<button type="submit" class="btn btn-primary">Go somewhere</button>-->
+
+					 </form>
+                  </div>
+          </div>
+
+
+<!--          <div class="card">-->
+<!--                  <div class="card-header" style="background-color:#0b9ad7;color:white">-->
+<!--                      <strong>Why Choose Us ?</strong>-->
+<!--                  </div>-->
+<!--                  <div class="card-body" >-->
+<!--                      <p class="card-text">24/7 Research support</p>-->
+<!--                      <p class="card-text">Quality assurance</p>-->
+<!--                      <p class="card-text">Information security</p>-->
+<!--                  </div>-->
+<!--          </div>-->
+
+
+     </div>
+
+</div>
+</div>
+<div class="FAQsect">
+<div class="inner-wrapper">
+<div class="container-fluid">
+	<div class="accordion-option">
+	<h3 class="title">Frequently Asked Questions</h3>
+	<a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
+  </div>
+  <div class="clearfix"></div>
+  <div class="panel-group FAQaccordion" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          What is the scope of the report?
+        </a>
+      </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in collapse show" role="tabpanel" data-parent="#accordion" aria-labelledby="headingOne">
+        <div class="panel-body">
+          The report efficiently evaluates the market from various dimensions to deliver an end-product that is informative, elaborate, and accurate and includes <b> detailed market segmentation, regional analysis, and competitive landscape of the industry.</b>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+         Does this report estimates the current market size?
+        </a>
+      </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" data-parent="#accordion" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          The report efficiently evaluates the current market size and provides industry forecast. The market was valued at xx Million US$ in 2019, and is expected to grow at a CAGR of xx% during the period 2020-2027.
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Does the report provides Market Size in terms of – Value (US$ Mn) and Volume (Thousands Units) - of the market?
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" data-parent="#accordion" aria-labelledby="headingThree">
+        <div class="panel-body">
+          The report efficiently evaluates the current market size and provides forecast for the industry in terms of <b> Value (US$ Mn) and Volume (Thousands Units).</b>
+        </div>
+     </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+			Which segments covered in this report?
+        </a>
+      </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" data-parent="#accordion" aria-labelledby="headingFour">
+        <div class="panel-body">
+          Market is segmented by Types, Applications, Technology, End-use Industries, and Regions.
+        </div>
+     </div>
+    </div>
+
+   <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFive">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+			What are the key factors covered in this report?
+        </a>
+      </h4>
+      </div>
+      <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" data-parent="#accordion" aria-labelledby="headingFive">
+        <div class="panel-body">
+         The report presents the <b> current market size, and market forecast, market opportunities, key drivers and restraints, regulatory scenario, industry trend, PESTLE analysis, PORTER’s analysis, new product approvals/launch, promotion and marketing initiatives, pricing analysis, competitive landscape </b> which help businesses in decision making. The analysis data is based on current and historical market trends which help in investment related decisions.
+        </div>
+     </div>
+    </div>
+
+	<div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingSix">
+        <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+			Does this report offer customization?
+        </a>
+      </h4>
+      </div>
+      <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel" data-parent="#accordion" aria-labelledby="headingSix">
+        <div class="panel-body">
+          Custom research is crucial components of the business strategy which helps any organization to gain insight into specific business sector, aligned with specific area of interest. Thus, WMR offers more accurate, pragmatic, and actionable information specifically tailored to suit your business needs.
+        </div>
+     </div>
+    </div>
+<script data-cfasync="false" src="{% static 'css/email-decode.min.js' %}"></script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+                  {
+    "@type": "Question",
+    "name": "What is the scope of this report?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The report efficiently evaluates the market from various dimensions to deliver an end-product that is informative, elaborate, and accurate and includes detailed market segmentation, regional analysis, and competitive landscape of the industry. <a href='https://www.stratagemmarketinsights.com/report/asia-pacific-passenger-boarding-bridge-pbb-market'> Read More</a>"
+    }
+  } ,              {
+    "@type": "Question",
+    "name": "Does this report estimates the current market size?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The report efficiently evaluates the current market size and provides industry forecast. The market was valued at xx Million US$ in 2019, and is expected to grow at a CAGR of xx% during the period 2020-2027. <a href='https://www.stratagemmarketinsights.com/report/asia-pacific-passenger-boarding-bridge-pbb-market'> Read More</a>"
+    }
+  } ,              {
+    "@type": "Question",
+    "name": "Does the report provides Market Size in terms of – Value (US$ Mn) and Volume (Thousands Units) - of the market?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The report efficiently evaluates the current market size and provides forecast for the industry in terms of Value (US$ Mn) and Volume (Thousands Units). <a href='https://www.stratagemmarketinsights.com/report/asia-pacific-passenger-boarding-bridge-pbb-market'> Read More</a>"
+    }
+  },{
+    "@type": "Question",
+    "name": "Which segments covered in this report?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Market is segmented by Types, Applications, Technology, End-use Industries, and Regions.<a href='https://www.stratagemmarketinsights.com/report/asia-pacific-passenger-boarding-bridge-pbb-market'> Read More</a>"
+    }
+  },{
+    "@type": "Question",
+    "name": "What are the key factors covered in this report?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The report presents the current market size, and market forecast, market opportunities, key drivers and restraints, regulatory scenario, industry trend, PESTLE analysis, PORTER’s analysis, new product approvals/launch, promotion and marketing initiatives, pricing analysis, competitive landscape which help businesses in decision making. The analysis data is based on current and historical market trends which help in investment related decisions.<a href='https://www.stratagemmarketinsights.com/report/asia-pacific-passenger-boarding-bridge-pbb-market'> Read More</a>"
+    }
+  },{
+    "@type": "Question",
+    "name": "Does this report offer customization?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Custom research is crucial components of the business strategy which helps any organization to gain insight into specific business sector, aligned with specific area of interest. Thus, SMI offers more accurate, pragmatic, and actionable information specifically tailored to suit your business needs.<a href='https://www.stratagemmarketinsights.com/report/asia-pacific-passenger-boarding-bridge-pbb-market'> Read More</a>"
+    }
+  }]
+}
+</script>
+
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+{% endblock %}

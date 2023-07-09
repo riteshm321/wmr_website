@@ -1,0 +1,258 @@
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Buy Now | Affluence Market Report {% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="breadcum_list1">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb" style="background-color:white;">
+	<li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+	<li class="breadcrumb-item"><a href="{% url 'reports:reportpage' report.slug %}">{{report.meta_title | title}}</a></li>
+	<li class="breadcrumb-item active" aria-current="page">Buy Now</li>
+</ol>
+</nav>
+</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 col-md-8 col-sm-12">
+                    <div class="card mt-4">
+                         <div class="card-header" style="background-color:#0b9ad7;">
+                          <h5 style="color:white;">Billing Details</h5>
+                         </div>
+                        <div class="card-body">
+
+                        <form id="paymentDetails" method="POST">
+                            {% csrf_token %}
+                            {{ form.first_name}}
+                            {{ form.last_name}}
+                            {{ form.corporate_email}}
+                            {{ form.phone}}
+                            {{ form.company}}
+                            {{ form.job_title}}
+                            {{ form.address}}
+                            {{ form.city}}
+                            {{ form.state}}
+                            {{form.country}}
+                            {{ form.zipcode}}
+
+                            {{ form.field.value|default_if_none:"" }}
+
+                            <div class="form-group row mx-1">
+                                    <input type="text" id="captcha_text" placeholder="Enter Captcha Code" class="form-control col-6" style="height:40px">
+
+                                <label id="captcha" class="col-4 mt-2" style="font-size:25px; color:#0b9ad7"><strong></strong></label>
+                                      <img src="{% static 'images/reload.png' %}" id="reloadId" height="60px" width="60px" class="col-2 float-right" >
+
+                          </div>
+
+                        </form>
+                            </div>
+        </div>
+        </div>
+
+        <div class="col-lg-5 col-md-8 col-sm-12">
+            <div class="card mt-4">
+                <div class="card-header" style="background-color:#0b9ad7;">
+                    <h5 style="color:white;">Shopping Cart Details</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <th>Report</th>
+                            <td>{{report.title}}</td>
+                        </tr>
+                        <tr>
+                            <th>AMR ID</th>
+                            <td>{{report.publisher.publisher_code}}-{{report.id}}</td>
+                        </tr>
+                         <tr>
+                            <th>Licence Type</th>
+<!--                            <td><select class="form-control" style="border: 1px solid #A9A9A9;border-radius: 4px;" id="select_price">-->
+<!--                                       <option value="{{report.single_user_price}}">Single User - ${{report.single_user_price}}</option>-->
+<!--                                         <option value="{{report.corporate_user_price}}">Corporate User - ${{report.corporate_user_price}}</option>-->
+<!--                            </select></td>-->
+                             <td>$ {{price}}</td>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+            </div>
+            <div class="card mt-4">
+                <div class="card-header" style="background-color:#0b9ad7;">
+                    <h5 style="color:white;">Payment Details</h5>
+                </div>
+                <div class="card-body">
+
+                    <button id="rzp-button1" class="btn btn-block" style="background-color:#071747;"><strong>Pay with Razorpay &nbsp;&nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i></strong></button>
+
+
+<!--                   {% if payment%}-->
+<!--                    <form action="/thank-you/" method="POST">-->
+<!--                    <script src="https://checkout.razorpay.com/v1/checkout.js"-->
+<!--                        data-key="rzp_live_p0Q8CMyKAt08f9"-->
+<!--                        data-amount="{{price}}"-->
+<!--                        data-currency="USD"-->
+<!--                        data-order_id="{{payment.id}}"-->
+<!--                        data-buttontext="Pay with Razorpay"-->
+<!--                        data-name="Affulence Market Reports"-->
+<!--                        data-description="Affluence Market Reports is a full-service market research company for brands all over the world. Our research reports helps businesses to make strategic and informed decisions."-->
+<!--                        data-image="{% static 'images/WMR_logo.png' %}"-->
+<!--                        data-prefill.name="Name"-->
+<!--                        data-prefill.email="Email"-->
+<!--                        data-theme.color="#F37254" ></script>-->
+<!--                    <input type="hidden" custom="Hidden Element" name="hidden">-->
+<!--                    </form>-->
+<!--                    {% endif %}-->
+
+
+                </div>
+            </div>
+
+        </div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+
+    captchaNumber = Math.floor(Math.random() * 10000)
+        var captcha = document.getElementById('captcha')
+         captcha.innerHTML = "<strong>" + captchaNumber + '</strong>'
+
+    imgId = document.getElementById('reloadId')
+
+    imgId.addEventListener('click', function(){
+        captchaNumber = Math.floor(Math.random() * 10000)
+
+        var captcha = document.getElementById('captcha')
+        captcha.innerHTML = "<strong>" + captchaNumber + '</strong>'
+
+
+    })
+
+});
+
+
+
+
+</script>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+console.log({{price}});
+var price = {{price}} * 100
+var options = { "key": "rzp_live_p0Q8CMyKAt08f9",
+ "amount": "price",
+  "currency": "USD",
+    "name": "Affulence Market Reports",
+     "description": "{{report.title}}",
+      "image": "{% static 'images/WMR_logo.png.png' %}",
+       "order_id": "{{payment.id}}",
+         "handler": function (response){
+                 console.log(response.razorpay_payment_id);
+                 console.log(response.razorpay_order_id);
+                 console.log(response.razorpay_signature)
+                 },
+           "theme": {
+        "color": "#0b9ad7",
+    }};
+
+var rzp1 = new Razorpay(options);
+
+document.getElementById('rzp-button1').onclick = function(e){
+        console.log("on razorpay button click");
+        var first_name = document.getElementById('first_name').value
+        var last_name = document.getElementById('last_name').value
+        var address = document.getElementById('address').value
+        var phone = document.getElementById('phone').value
+        var company = document.getElementById('company').value
+        var city = document.getElementById('city').value
+        var state = document.getElementById('state').value
+        var zipcode = document.getElementById('zipcode').value
+        var job_title = document.getElementById('job_title').value
+        var corporate_email = document.getElementById('corporate_email').value
+        var captcha_text = document.getElementById('captcha_text').value
+        var captcha = document.getElementById('captcha').value
+        if(first_name == ''){
+          alert("Please Enter your First Name");
+        }
+        else if (last_name == ''){
+           alert("Please Enter your Last Name");
+        }
+        else if (address == ''){
+           alert("Please Enter your address");
+        }
+        else if (company == ''){
+           alert("Please Enter your Company Name");
+        }
+        else if (city == ''){
+           alert("Please Enter your city");
+        }
+        else if (state == ''){
+           alert("Please Enter your state Name");
+        }
+        else if (country == ''){
+           alert("Please Enter your Country Name");
+        }
+        else if (job_title == ''){
+           alert("Please Enter your Job Title");
+        }
+        else if (zipcode == ''){
+           alert("Please Enter your zip code");
+        }
+        else if (corporate_email == ''){
+           alert("Please Enter your Email");
+        }
+        else if (captcha_text == ''){
+           alert("Please Enter Correct Capthcha");
+        }
+        else if (captcha_text != captchaNumber){
+            alert("Please Enter Correct Capthcha");
+        }
+        else{
+            e.preventDefault();
+          	rzp1.open();
+        }
+
+
+        $.getJSON({
+	    url: '{% url 'success' %}',
+	    xhrFields: {
+		    withCredentials: true
+	      },
+	      type: 'POST',
+	      data: {
+	       'first_name': first_name,
+           'last_name':last_name,
+          ' address':address,
+           'phone':phone,
+           'company':company,
+           'city':city,
+           'state':state,
+           'country':country,
+           'zipcode':zipcode,
+           'job_title':job_title,
+           'corporate_email':corporate_email,
+           'report': {{report.id}},
+           'price':{{price}},
+
+	      },
+	      success:function(data){
+
+	    	}
+  	});
+
+
+
+
+   }
+</script>
+
+{% endblock %}

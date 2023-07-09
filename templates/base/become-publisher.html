@@ -1,0 +1,51 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Publisher Partnership | Affluence Market Report {% endblock %}
+{% block body %}
+<div class="container">
+			<div class="text-center">
+				<h1 class="head-after h1fs">Become Publisher</h1>
+			</div>
+
+				<div class="row">
+					<div class="col-2">
+					</div>
+					<div class="col-lg-8">
+							<div class="card">
+							  <div class="card-header" style="background-color:#0b9ad7;">
+								 <h3 style="color:white;">Become Publisher</h3>
+							  </div>
+							  <div class="card-body" style="background:#f1f1f1;">
+								<form method="post">
+									<h3>{{form.errors}}</h3>
+									{% csrf_token %}
+									{{form.first_name}}
+									{{form.last_name}}
+									{{form.corporate_email}}
+									{{form.phone}}
+									{{form.company}}
+									{{form.website}}
+									{{form.intro}}
+									{{form.no_of_report}}
+									{{form.yearly_published}}
+
+
+								<button type='submit' class='btn btn-primary'><strong>Submit</strong></button>
+
+
+							 </form>
+
+							  </div>
+							</div>
+						</div>
+				   <div class="col-2">
+					</div>
+
+
+		</div>
+	</div>
+{% endblock %}
+
+
