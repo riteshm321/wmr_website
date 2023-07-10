@@ -1886,7 +1886,7 @@ textarea {
 	text-align: left
 }
 .ourClient .section-title {
-	background: #7dba25 none repeat scroll 0 0;
+	background: #0b9ad7 none repeat scroll 0 0;
 	color: #fff;
 	font-size: 22px;
 	font-weight: 400;
@@ -1896,7 +1896,7 @@ textarea {
 }
 .ourClient .section-title::after {
 	border-bottom: 16px solid transparent;
-	border-left: 16px solid #7dba25;
+	border-left: 16px solid #0b9ad7;
 	border-top: 16px solid transparent;
 	content: "";
 	position: absolute;
