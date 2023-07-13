@@ -53,7 +53,7 @@
 <div id="our-services" class="our-services-bg">
 <div class="container" >
     			<div class="text-center mb-5">
-					<h3 class="head-after color-primary" style="color:#000000"><strong>Trending Reports By Industries</strong></h3>
+					<h3 class="head-after color-primary" style="color:#000000"><strong>Industries</strong></h3>
 
 				</div>
 				<div class="row">
@@ -69,9 +69,9 @@
 										     </div>
 										</a>
 						</div>
-									<h3 class="text-center"><a href="{% url 'category' category.slug %}" style="color:#0b9ad7;">
-										<span><strong> {{category.name }}</strong></span>
-									</a></h3>
+									<h2 class="text-center"><a href="{% url 'category' category.slug %}" style="color:#0b9ad7;">
+										<span><strong><h4 style="color:#0b9ad7;"> {{category.name }}</h4></strong></span>
+									</a></h2>
 
 					</div>
 
@@ -88,32 +88,7 @@
 
 
 
-<div id="our-clients" class="carousel-bg">
-	<div class="container mt-4">
-		<div class="row ourClient" >
-             <div class="col-md-2 col-sm-3 text-center" >
-                  <h3 class="section-title" style="background-color:#0b9ad7;">Our Clients</h3>
-             </div>
-               <div class="col-md-10 col-sm-9">
-                <div class="bx-wrapper" style="max-width:100%;">
-                     <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: auto;">
-                        <div class="bx-wrapper" style="max-width: 2185px;">
-                        	<div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 100px;">
-						<ul id="bx5" class="bxslider">
-							{% for client in clients %}
-						  <li> <a class="thumbnail"> <img alt="{{client.name}}" title="{{client.name}}" src="{{client.image.url}}"> </a> </li>
-                             {% endfor %}
 
-
-						</ul>
-							</div>
-						</div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-		</div>
-	</div>
 
 
 <div id="why-choose">
@@ -163,6 +138,34 @@
 	    		</div>
 	    	</div>
 	    </div>
+
+<div id="our-clients" class="carousel-bg">
+	<div class="container mt-4">
+		<div class="row ourClient" >
+             <div class="col-md-2 col-sm-3 text-center" >
+                  <h3 class="section-title" style="background-color:#0b9ad7;">Our Clients</h3>
+             </div>
+               <div class="col-md-10 col-sm-9">
+                <div class="bx-wrapper" style="max-width:100%;">
+                     <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: auto;">
+                        <div class="bx-wrapper" style="max-width: 2185px;">
+                        	<div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 100px;">
+						<ul id="bx5" class="bxslider">
+							{% for client in clients %}
+						  <li> <a class="thumbnail"> <img alt="{{client.name}}" title="{{client.name}}" src="{{client.image.url}}"> </a> </li>
+                             {% endfor %}
+
+
+						</ul>
+							</div>
+						</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+		</div>
+	</div>
+
 
 <!--<div id="our-clients1" class="carousel-bg">-->
 <!--	<div class="container mt-4">-->

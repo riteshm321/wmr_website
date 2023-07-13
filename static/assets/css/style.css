@@ -468,7 +468,7 @@ select.form-control:not([size]):not([multiple]) {
 	min-width: 39rem
 }
 #header .dropdown-menu:before {
-	content: "\f0d7";
+	content: "\27A4";
 	font-family: 'FontAwesome';
 	position: absolute;
 	top: -17px;
@@ -785,7 +785,7 @@ select.form-control:not([size]):not([multiple]) {
 	margin-bottom: 0
 }
 #why-choose .card:hover {
-	background-color: #6cc8de;
+	/*background-color: #6cc8de;*/
 }
 #category-card .card:hover {
 	background-color: #6cc8de;
