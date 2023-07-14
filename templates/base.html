@@ -191,42 +191,186 @@
 
 
 {% endblock %}
-<div class="continer-fluid">
-	<div class="jumbotron text-center" style="background-image:url({% static 'images/best-background-08.jpg' %})">
-              <h3 style="color:black">Subscribe Newsletter</h3>
-		<p class="lead">
-			<form method="post" action="{% url 'subscribe' %}">
-		    {% csrf_token %}
-			<input type="text" placeholder="  Enter Your Email" style="height:40px;width:350px" name="email">
-			&nbsp;&nbsp;<button class="btn btn-primary" type="submit" role="button" style="background-color:#0b9ad7;border-color:#0b9ad7"><strong>Subscribe</strong></button>
-		</form>
-		</p>
-
-              <hr>
 
 
-            </div>
-</div>
-<div id="footer">
+<div class="container-fluid" style="background-image:url({% static 'images/sample-text-bg.jpg' %});background-repeat:none;background-size: cover;background-position: center;margin: 0px 0px 0px 0px;padding: 1rem 0;">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-4 mb-2">
-				<a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/WMR_logo.png' %}" class="smi_logo" alt="Wisdom Market Research" title="Wisdom Market Research" height="90px"></a>
-				<div class="mt-3">
-					<p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+91 8591633987">IND:&nbsp;+91 8591633987</a></h5>
-<!--                    <p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+91-8075755284">U.K:&nbsp; +44 1158 88 1333</a></h5>-->
-					<h5><i class="icon-envelope"></i><a href='mailto:sales@wisdommarketresearch.com'> &nbsp;<span class="__cf_email__" >sales@wisdommarketresearch.com</span></a></h5></p>
-					<ul class="f-m-icons">
+
+		<h2 class="heading">
+			<div style="display: block;padding: 0px;margin: 0px;width: 100%;text-align: center;">
+				<span class="new_span">FRESH PERSPECTIVES<br> NEW DATA AND INSIGHTS</span>
+			</div>
+			<hr>
+		</h2>
+
+		<center>
+			<div class="item1 col-2">
+				<img class="img-responsive" alt="Sample" src="{% static 'images/report_icon.png' %}" style="width:55px;height:55px;">
+				<div class="title1">1.5 Million Market <br>Research Reports</div>
+				<p class = "para" style="font-size:14px;">Reports include detailed research, sales data and market information along with analysis, context also provide the complete picture of the past, present and future of key markets.</p>
+			</div>
+
+			<div class="item1 col-2">
+				<img class="img-responsive" alt="Sample" src="{% static 'images/publishers_icon.png' %}" style="width:55px;height:55px;">
+				<div class="title1">100+ Verified <br>Publishers</div>
+				<p class = "para" style="font-size:14px;">With global coverage of key new products launched, WMR is your destination for data, analysis and insights and innovation.</p>
+			</div>
+
+			<div class="item1 col-3">
+				<img class="img-responsive" alt="Sample" src="{% static 'images/trusted_icon.png' %}" style="width:55px;height:55px;">
+				<div class="title1">Trusted <br>Insights</div>
+				<p class = "para" style="font-size:14px;">Make the right decisions with forward-thinking insights, verified peer-driven research, and metrics and data.</p>
+			</div>
+
+			<div class="item1 col-4">
+				<img class="img-responsive" alt="Sample" src="{% static 'images/forecast_icon.png' %}" style="width:52px;height:52px;">
+				<div class="title1">Forecast and <br> Market Sizing</div>
+				<p class = "para" style="font-size:14px;">WMR is a fast, reliable database of global market information, including sizes, segmentation, market shares and forecast.</p>
+			</div>
+
+			<div class="item1 col-5">
+				<img class="img-responsive" alt="Sample" src="{% static 'images/analysis_icon.png' %}" style="width:55px;height:55px;">
+				<div class="title1">Market<br> Analysis</div>
+				<p class = "para" style="font-size:14px;">A variety of research and insight services available to help you grow your business and understand market updates/brands more effectively.</p>
+			</div>
+		</center>
+			<div class="clearfix"></div>
+
+		</div> <!-- row -->
+    </div>
+
+</div>
+
+
+<div class="footersect mt-lg-0 mt-md-0" data-aos-anchor-placement="top-bottom">
+
+<div class="container-fluid bodyw">
+
+<div class="row">
+
+<div class="col-md-4 col-12">
+
+  <div class="footH">
+
+	 <h5>Contact us</h5>
+
+  </div>
+
+  <div class="footinfo">
+
+
+
+<!--	 </p><div class="footinfoicon">-->
+
+<!--		<span class="fa fa-envelope icon-color"></span>-->
+
+<!--	 </div>-->
+
+	 <div style="color:white;">
+         <i class="fas fa-envelope"></i>
+		<a href="mailto:sales@wisdommarketresearch.com" style="color:white;">sales@wisdommarketresearch.com</a>
+
+	 </div>
+	  <p></p>
+	  <div style="color:white;after:#0b9ad7">
+		   <i class="fas fa-phone-square-alt" ></i><a href="tel:+91 8591633987" style="color:white;">&nbsp;+91 8591633987</a>
+	  </div>
+	  <p></p>
+
+	  <div>
+
+		<h5 style="color:white;">India:</h5>
+
+		<address style="color:white;">
+
+		    F-22, Unique Society, Dehu Road, Pune.
+			Maharashtra, India, PIN- 412101
+
+		</address>
+
+	 </div>
+	  <div class="mt-3">
+		  <div class = "row">
+		  <ul>
 						<li><a href="https://www.facebook.com/wisdommarketresearch/" rel="nofollow"><img src="{% static 'images/facebook.png'%}"></a></li>
 <!--						<li><a href="https://twitter.com/AffluenceReport" rel="nofollow"><img src="{% static 'images/twitter.png'%}"></a></li>-->
 						<li><a href="https://www.linkedin.com/company/wisdommarketresearch" rel="nofollow"><img src="{% static 'images/linkedin.png'%}"></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-2 mb-3">
-				<h3 class="head-after">Menu</h3>
-				  <div class="mt-2">
-					<ul>
+		  </ul>
+		  </div>
+	  </div>
+
+<!--	 <p></p>-->
+
+
+<!--	 </p><div class="footinfoicon">-->
+
+<!--		<img src="/images/icons/mapicon.png" alt="mapicon" loading="lazy" width="50" height="30">-->
+
+<!--	 </div>-->
+
+<!--	 <div class="footinfoinr1" style="padding-bottom: 1px">-->
+
+<!--		<h5>Sales Office (U.S.):</h5>-->
+
+<!--		<address>-->
+
+<!--		   Worldwide Market Reports, 533 Airport Boulevard, Suite 400, Burlingame, CA 94010, United States-->
+
+<!--		</address>-->
+
+<!--		<p><img src="/images/icons/phoneIconf.svg" class="footpicon" alt="mapicon" loading="lazy" width="50" height="30"><a href="tel:+1-415-871-0703">+1-415-871-0703</a></p>-->
+
+<!--	 </div>-->
+
+<!--	 <p></p>-->
+
+<!--	 <p>-->
+
+<!--	 </p>-->
+<!--	  <div class="footinfoicon">-->
+
+<!--		<img src="/images/icons/mapicon.png" alt="mapicon" loading="lazy" width="50" height="30">-->
+
+<!--	 </div>-->
+
+
+
+	 <p></p>
+
+	 <div class="footinfoinr1 ukfp" style="border-bottom: none;margin-left:15px">
+<!--	 	<p>-->
+<!--		   <img src="/images/icons/phoneIconf.svg" class="footpicon nomt" alt="phoneicon" loading="lazy" width="50" height="30"><span class="footcontb">U.S.:</span><a href="tel:+1415 871 0703 ">+1 415 871 0703 </a>-->
+<!--		</p>-->
+<!--		<p>-->
+<!--		   <img src="/images/icons/phoneIconf.svg" class="footpicon nomt" alt="phoneicon" loading="lazy" width="50" height="30"><span class="footcontb">UK :</span><a href="tel:+44-203-289-4040">+44-203-289-4040</a>-->
+<!--		</p>-->
+<!--		<p>-->
+<!--		   <img src="/images/icons/phoneIconf.svg" class="footpicon nomt" alt="phoneicon" loading="lazy" width="50" height="30"><span class="footcontb">Japan :</span><a href="tel:+81-50-5539-1737">+81-50-5539-1737</a>-->
+<!--		</p>-->
+
+
+	 </div>
+
+  </div>
+
+</div>
+
+<div class="col-md-8 col-lg-8 col-12">
+
+  <div class="row">
+
+	 <div class="col-md-3 col-6">
+
+		<div class="footH">
+
+		   <h5>Menu</h5>
+
+		</div>
+
+		<div class="footinfo3">
+
+		   <ul class="footinfo3ul">
 						<li><a href="{% url 'aboutus' %}">About Us</a></li>
 						<li><a href="{% url 'latestreports' %}">Latest Reports</a></li>
 						<li><a href="{% url 'becomepublisher' %}" rel="nofollow">Publisher Partnership</a></li>
@@ -234,37 +378,166 @@
 						<li><a href="{% url 'termsandconditions' %}" rel="nofollow">Terms & Conditions</a></li>
 						<li><a href="{% url 'contactus' %}">Contact Us</a></li>
 					</ul>
-				  </div>
-			</div>
-
-
-			<div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-                      <h3 class="head-after"></h3>
-				<div class="mt-3 footer-contact">
-					<br>
-<!--					<img src="{% static 'images/comodossl.png' %}"/>-->
-					<img src="{% static 'images/payment-logos.png' %}"/>
-<!--					<img src="{% static 'images/comodossl.png' %}"/>-->
-
-				</div>
-			</div>
 
 		</div>
-	</div>
-</div>
 
-<div id="sub-footer" class="sub-footer-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6 text-left">
-				<p><b> &copy; 2023 Wisdom Market Research. All rights reserved</b></p>
-			</div>
-			<div class="col-lg-6 text-right" id="ftpd">
+	 </div>
 
-			</div>
+	 <div class="col-md-3 col-6">
+
+		<div class="footH">
+
+		   <h5>Quick Links</h5>
+
 		</div>
-	</div>
+
+		<div class="footinfo3">
+
+
+
+			 <ul class="footinfo3ul">
+						<li><a href="{% url 'aboutus' %}">About Us</a></li>
+						<li><a href="{% url 'latestreports' %}">Latest Reports</a></li>
+						<li><a href="{% url 'becomepublisher' %}" rel="nofollow">Publisher Partnership</a></li>
+						<li><a href="{% url 'privacypolicy' %}" rel="nofollow">Privacy Policy</a></li>
+						<li><a href="{% url 'termsandconditions' %}" rel="nofollow">Terms & Conditions</a></li>
+						<li><a href="{% url 'contactus' %}">Contact Us</a></li>
+					</ul>
+
+
+
+		</div>
+
+	 </div>
+
+	 <div class="col-md-6">
+
+
+		<div class="footH">
+
+		   <h5>Secure Payment By:</h5>
+
+		</div>
+
+		<div class="footinfo3">
+
+<!--		   <p>Want us to send you latest updates of the current trends, insights, and more, signup to our newsletter (for alerts, special offers, and discounts). </p>-->
+
+<!--		   <div class="newsfooter">-->
+
+<!--			<div class="input-group">-->
+<!--				<span class="eemail_msg"><span id="eemail_msg"></span></span>-->
+<!--				<br>-->
+<!--				 <input type="email" id="newstext" name="email" class="form-control newsinput" placeholder="Your Email Address" onkeypress="return check(event)" required="">-->
+<!--				<div class="input-group-append">-->
+<!--					 <button type="submit" name="newssubmit" id="nwsltr-pri" class="input-group-text subsbtn">Subscribe</button>-->
+<!--				</div>-->
+
+<!--			</div>-->
+
+<!--		   </div>-->
+
+		</div>
+
+
+		<div class="paymentimg">
+
+<!--		   <h5>Secure Payment By:</h5>-->
+
+		   <img src="{% static 'images/payment-logos.png' %}"/>
+
+<!--		   <p class="text-white paymentinfo ">This website is secured Origin CA certificate on the server, Comodo, Firewall and Verified Sitelock Malware Protection</p>-->
+
+<!--		   <p class="text-center"><img src="/images/Comodo-Secure-Seal.png" class="img-fluid combopicon" alt="secureimg" loading="lazy" width="50" height="30"></p>-->
+
+		</div>
+
+	 </div>
+
+  </div>
+
 </div>
+
+</div>
+
+</div>
+
+<div class="footercopyright">
+
+<div class="container-fluid bodyw p0">
+
+<div class="row">
+
+  <div class="col-md-12 col-lg-12">
+
+	 <div class="text-center p-3 text-white"> © 2023 Wisdom Market Research. All Rights Reserved</div>
+
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+<!--<div id="footer">-->
+<!--	<div class="container">-->
+<!--		<div class="row">-->
+<!--			<div class="col-lg-4 mb-2">-->
+<!--				<a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/WMR_logo.png' %}" class="smi_logo" alt="Wisdom Market Research" title="Wisdom Market Research" height="90px"></a>-->
+<!--				<div class="mt-3">-->
+<!--					<p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+91 8591633987">IND:&nbsp;+91 8591633987</a></h5>-->
+<!--&lt;!&ndash;                    <p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+91-8075755284">U.K:&nbsp; +44 1158 88 1333</a></h5>&ndash;&gt;-->
+<!--					<h5><i class="icon-envelope"></i><a href='mailto:sales@wisdommarketresearch.com'> &nbsp;<span class="__cf_email__" >sales@wisdommarketresearch.com</span></a></h5></p>-->
+<!--					<ul class="f-m-icons">-->
+<!--						<li><a href="https://www.facebook.com/wisdommarketresearch/" rel="nofollow"><img src="{% static 'images/facebook.png'%}"></a></li>-->
+<!--&lt;!&ndash;						<li><a href="https://twitter.com/AffluenceReport" rel="nofollow"><img src="{% static 'images/twitter.png'%}"></a></li>&ndash;&gt;-->
+<!--						<li><a href="https://www.linkedin.com/company/wisdommarketresearch" rel="nofollow"><img src="{% static 'images/linkedin.png'%}"></a></li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="col-lg-2 mb-3">-->
+<!--				<h3 class="head-after">Menu</h3>-->
+<!--				  <div class="mt-2">-->
+<!--					<ul>-->
+<!--						<li><a href="{% url 'aboutus' %}">About Us</a></li>-->
+<!--						<li><a href="{% url 'latestreports' %}">Latest Reports</a></li>-->
+<!--						<li><a href="{% url 'becomepublisher' %}" rel="nofollow">Publisher Partnership</a></li>-->
+<!--						<li><a href="{% url 'privacypolicy' %}" rel="nofollow">Privacy Policy</a></li>-->
+<!--						<li><a href="{% url 'termsandconditions' %}" rel="nofollow">Terms & Conditions</a></li>-->
+<!--						<li><a href="{% url 'contactus' %}">Contact Us</a></li>-->
+<!--					</ul>-->
+<!--				  </div>-->
+<!--			</div>-->
+
+
+<!--			<div class="col-lg-6 col-md-12 col-sm-12 mb-3">-->
+<!--                      <h3 class="head-after"></h3>-->
+<!--				<div class="mt-3 footer-contact">-->
+<!--					<br>-->
+<!--&lt;!&ndash;					<img src="{% static 'images/comodossl.png' %}"/>&ndash;&gt;-->
+<!--					<img src="{% static 'images/payment-logos.png' %}"/>-->
+<!--&lt;!&ndash;					<img src="{% static 'images/comodossl.png' %}"/>&ndash;&gt;-->
+
+<!--				</div>-->
+<!--			</div>-->
+
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+
+<!--<div id="sub-footer" class="sub-footer-bg">-->
+<!--	<div class="container">-->
+<!--		<div class="row">-->
+<!--			<div class="col-lg-6 text-left">-->
+<!--				<p><b> &copy; 2023 Wisdom Market Research. All rights reserved</b></p>-->
+<!--			</div>-->
+<!--			<div class="col-lg-6 text-right" id="ftpd">-->
+
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
 <div class="backto-top-btn">
 <span class="top-btn btn btn-primary"><i class="icon-chevron-sign-up icon-2x"></i></span>
 </div>

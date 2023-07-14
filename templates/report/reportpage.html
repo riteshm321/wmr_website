@@ -96,7 +96,7 @@
 					<ul class="navbar-nav ml-auto" id="mrpt">
 						<li class="nav-item"><a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></button></a></li>
 						<li class="nav-item"> <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-danger"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a></li>
-						<li class="nav-item"><a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-info"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buying</strong></span></button> </b> </a></li>
+						<li class="nav-item"><a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-primary"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buying</strong></span></button> </b> </a></li>
 <!--						<li class="nav-item"><a href="#"><b><button class="btncut"><span><i class="icon-user"></i> &nbsp; Speak To Analyst</span></button> </b> </a></li>-->
 					</ul>
 				</div>
@@ -134,8 +134,8 @@
 	<div id="calltoac">
         <a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></button></a>
         <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-danger"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a>
-        <a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-info"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buying</strong></span></button> </b> </a>
-        <a href="{% url 'reports:covidrequest' report.id %}"><button class="btn btn-danger" style="background-color:#0b9ad7;border:none;"><span> &nbsp;<strong>COVID-19 Impact Analysis</strong> </span></button></a>
+        <a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-primary"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buying</strong></span></button> </b> </a>
+<!--        <a href="{% url 'reports:covidrequest' report.id %}"><button class="btn btn-danger" style="background-color:#0b9ad7;border:none;"><span> &nbsp;<strong>COVID-19 Impact Analysis</strong> </span></button></a>-->
 	</div>
 </div>
 </div>

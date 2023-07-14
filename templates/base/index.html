@@ -103,10 +103,10 @@
                                 <div class="card">
 									<div class="row">
 										<div class="col-sm-12">
-											<u style="color:#0b9ad7"><a href="{% url 'reports:reportpage' report.slug %}"><h4 style="color:#0b9ad7"><strong>{{report.title | title }}</strong></h4></a></u>
+											<a href="{% url 'reports:reportpage' report.slug %}" class="a_underline"><h4 style="color:#0b9ad7;" ><strong>{{report.title | title }}</strong></h4></a>
                                             <p>No. of Pages: &nbsp;&nbsp;{{report.no_of_pages}} </p>
 											<hr>
-											<p>{{report.summary | truncatechars:400 | safe }}<a class="blc" href="{% url 'reports:reportpage' report.slug %}"><strong>Read More >></strong></a></p><br>
+											<p>{{report.summary | truncatechars:280 | safe }}</p><br>
 											<div class="blog-btn">
 												<p>
 												<h5><span class="text-left">Date: {{report.published_date | date:"M Y"}}</span>&nbsp;&nbsp;|
@@ -115,8 +115,8 @@
 														<form class = "form-inline" method="post" action="{% url 'reports:indexcheckout' report.id report.single_user_price%}">
 															{% csrf_token %}
 
-														<a class="btn btn-success" href="{% url 'reports:samplerequest' report.id%}"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></a>
-														&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>
+														<a class="btn btn-success" href="{% url 'reports:reportpage' report.slug %}"><span> &nbsp; <strong>Read More </strong></span></a>
+<!--														&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>-->
                                                             </form>
 													</div>
 											    </h5>
