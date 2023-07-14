@@ -63,73 +63,316 @@
 
 
 
-<div class="continer-fluid">
-	<div class="jumbotron text-center" style="background-color:#000000">
-              <h3 style="color:#0b9ad7">Subscribe Newsletter</h3>
-		<p class="lead"><input type="text" placeholder="  Enter Your Email" style="height:40px;width:350px">&nbsp;&nbsp;<a class="btn btn-primary" href="{% url 'index' %}" role="button"><strong>Subscribe</strong></a></p>
-              <hr>
+<!--<div class="continer-fluid">-->
+<!--	<div class="jumbotron text-center" style="background-color:#000000">-->
+<!--              <h3 style="color:#0b9ad7">Subscribe Newsletter</h3>-->
+<!--		<p class="lead"><input type="text" placeholder="  Enter Your Email" style="height:40px;width:350px">&nbsp;&nbsp;<a class="btn btn-primary" href="{% url 'index' %}" role="button"><strong>Subscribe</strong></a></p>-->
+<!--              <hr>-->
 
+<!--            </div>-->
+<!--</div>-->
+
+<style>
+  .footersect {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footH {
+    margin-bottom: 1.5rem;
+  }
+
+  .footinfo {
+    color: white;
+  }
+
+  .footinfo a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footinfo a:hover {
+    text-decoration: underline;
+  }
+
+  .footinfo h5 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footinfo i {
+    margin-right: 0.5rem;
+  }
+
+  .footinfo p {
+    margin-bottom: 0;
+  }
+
+  .footinfo ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .footinfo ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footinfo ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footinfo ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .footinfo3 {
+    color: white;
+  }
+
+  .footinfo3 h5 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footinfo3 ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .footinfo3 ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footinfo3 ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footinfo3 ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .paymentimg {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .paymentimg img {
+    max-width: 100%;
+  }
+
+  .footercopyright {
+    background-color: #222;
+    padding: 1rem 0;
+  }
+
+  .footercopyright {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+  }
+</style>
+<div class="footersect">
+  <div class="container-fluid bodyw">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="footH">
+          <h5>Contact us</h5>
+        </div>
+        <div class="footinfo">
+          <div>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:sales@wisdommarketresearch.com">sales@wisdommarketresearch.com</a>
+          </div>
+          <p></p>
+          <div>
+            <i class="fas fa-phone-square-alt"></i>
+            <a href="tel:+91 8591633987">+91 8591633987</a>
+          </div>
+          <p></p>
+			<br>
+          <div>
+            <h5>India:</h5>
+            <address>
+              F-22, Unique Society, Dehu Road, Pune, Maharashtra, India, PIN- 412101
+            </address>
+          </div>
+<!--          <div class="mt-3">-->
+<!--            <ul class="social-media-icons">-->
+<!--              <li><a href="https://www.facebook.com/wisdommarketresearch/"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a></li>-->
+<!--              <li><a href="https://www.linkedin.com/company/wisdommarketresearch"><img src="{% static 'images/linkedin.png' %}" alt="LinkedIn"></a></li>-->
+<!--            </ul>-->
+<!--          </div>-->
+			<style>
+  .social-media-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-media-icons li {
+    margin: 0 0.5rem;
+  }
+
+  .social-media-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    background-color: #333;
+    color: #fff;
+  }
+
+  .social-media-icons a:hover {
+    background-color: #1877f2; /* Facebook blue */
+  }
+
+  .social-media-icons img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+  }
+</style>
+
+			<div class="mt-3">
+  <ul class="social-media-icons" >
+<!--	  <li style="color:white;font-size:24px;"><strong>Let's connect on</strong></li>-->
+    <li>
+      <a href="https://www.facebook.com/wisdommarketresearch/" target="_blank" rel="nofollow">
+        <img src="{% static 'images/facebook.png' %}" alt="Facebook">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/company/wisdommarketresearch" target="_blank" rel="nofollow">
+        <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn">
+      </a>
+    </li>
+  </ul>
+</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <div class="footH">
+              <h5>Menu</h5>
             </div>
+            <div class="footinfo3">
+              <ul>
+                <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                <li><a href="{% url 'latestreports' %}">Latest Reports</a></li>
+                <li><a href="{% url 'becomepublisher' %}" rel="nofollow">Publisher Partnership</a></li>
+                <li><a href="{% url 'privacypolicy' %}" rel="nofollow">Privacy Policy</a></li>
+                <li><a href="{% url 'termsandconditions' %}" rel="nofollow">Terms & Conditions</a></li>
+                <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="footH">
+              <h5>Quick Links</h5>
+            </div>
+            <div class="footinfo3">
+              <ul>
+                <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                <li><a href="{% url 'latestreports' %}">Latest Reports</a></li>
+                <li><a href="{% url 'becomepublisher' %}" rel="nofollow">Publisher Partnership</a></li>
+                <li><a href="{% url 'privacypolicy' %}" rel="nofollow">Privacy Policy</a></li>
+                <li><a href="{% url 'termsandconditions' %}" rel="nofollow">Terms & Conditions</a></li>
+                <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="footH">
+              <h5>Secure Payment By:</h5>
+            </div>
+            <div class="footinfo3">
+              <div class="paymentimg">
+                <img src="{% static 'images/payment-logos.png' %}" alt="Payment Logos">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div id="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4 mb-2">
-				<a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/WMR_logo.png' %}" class="smi_logo" alt="Wisdom Market Research" title="Wisdom Market Research" height="90px" width="280px"></a>
-				<div class="mt-3">
-					<p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+1-424-256-1722">IND:&nbsp; +91 8591633987</a></h5>
-<!--                    <p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+44 1158 88 1333">U.K:&nbsp; +44 1158 88 1333</a></h5>-->
-
-					<h5><i class="icon-envelope"></i><a href='mailto:sales@wisdommarketresearch.com'> &nbsp;<span class="__cf_email__" >sales@wisdommarketresearch.com</span></a></h5></p>
-					<ul class="f-m-icons">
-						<li><a href="https://www.facebook.com/affluencemarketreports/" rel="nofollow"><img src="{% static 'images/facebook.png'%}"></a></li>
-						<li><a href="https://twitter.com/AffluenceReport" rel="nofollow"><img src="{% static 'images/twitter.png'%}"></a></li>
-						<li><a href="https://www.linkedin.com/company/affluencemarketreports" rel="nofollow"><img src="{% static 'images/linkedin.png'%}"></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-2 mb-3">
-				<h3 class="head-after">Menu</h3>
-				  <div class="mt-2">
-					<ul>
-						<li><a href="{% url 'aboutus' %}">About Us</a></li>
-						<li><a href="{% url 'latestreports' %}">Latest Reports</a></li>
-						<li><a href="{% url 'becomepublisher' %}" rel="nofollow">Publisher Partnership</a></li>
-						<li><a href="{% url 'privacypolicy' %}" rel="nofollow">Privacy Policy</a></li>
-						<li><a href="{% url 'termsandconditions' %}" rel="nofollow">Terms & Conditions</a></li>
-						<li><a href="{% url 'contactus' %}">Contact Us</a></li>
-
-					</ul>
-
-
-				  </div>
-			</div>
-
-
-			<div class="col-lg-6 mb-3 text-left">
-                      <h3 class="head-after"></h3>
-				<div class="mt-3 footer-contact">
-					<br>
-					<img src="{% static 'images/payment-logo.png'%}"/>
-
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="footercopyright">
+  <div class="container-fluid bodyw p-0">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center p-3">© 2023 Wisdom Market Research. All Rights Reserved</div>
+      </div>
+    </div>
+  </div>
 </div>
+<!--<div id="footer">-->
+<!--	<div class="container">-->
+<!--		<div class="row">-->
+<!--			<div class="col-lg-4 mb-2">-->
+<!--				<a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/WMR_logo.png' %}" class="smi_logo" alt="Wisdom Market Research" title="Wisdom Market Research" height="90px" width="280px"></a>-->
+<!--				<div class="mt-3">-->
+<!--					<p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+1-424-256-1722">IND:&nbsp; +91 8591633987</a></h5>-->
+<!--&lt;!&ndash;                    <p><h5><i class="icon-phone"></i>&nbsp; <a href="tel:+44 1158 88 1333">U.K:&nbsp; +44 1158 88 1333</a></h5>&ndash;&gt;-->
 
-<div id="sub-footer" class="sub-footer-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6 text-left">
-				<p><b> &copy; 2021 Wisdom Market Research. All rights reserved</b></p>
-			</div>
-			<div class="col-lg-6 text-right" id="ftpd">
-<!--				<p>Powered by <b>Worldwide Market Reports.</b></p>-->
-			</div>
-		</div>
-	</div>
-</div>
+<!--					<h5><i class="icon-envelope"></i><a href='mailto:sales@wisdommarketresearch.com'> &nbsp;<span class="__cf_email__" >sales@wisdommarketresearch.com</span></a></h5></p>-->
+<!--					<ul class="f-m-icons">-->
+<!--						<li><a href="https://www.facebook.com/affluencemarketreports/" rel="nofollow"><img src="{% static 'images/facebook.png'%}"></a></li>-->
+<!--						<li><a href="https://twitter.com/AffluenceReport" rel="nofollow"><img src="{% static 'images/twitter.png'%}"></a></li>-->
+<!--						<li><a href="https://www.linkedin.com/company/affluencemarketreports" rel="nofollow"><img src="{% static 'images/linkedin.png'%}"></a></li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="col-lg-2 mb-3">-->
+<!--				<h3 class="head-after">Menu</h3>-->
+<!--				  <div class="mt-2">-->
+<!--					<ul>-->
+<!--						<li><a href="{% url 'aboutus' %}">About Us</a></li>-->
+<!--						<li><a href="{% url 'latestreports' %}">Latest Reports</a></li>-->
+<!--						<li><a href="{% url 'becomepublisher' %}" rel="nofollow">Publisher Partnership</a></li>-->
+<!--						<li><a href="{% url 'privacypolicy' %}" rel="nofollow">Privacy Policy</a></li>-->
+<!--						<li><a href="{% url 'termsandconditions' %}" rel="nofollow">Terms & Conditions</a></li>-->
+<!--						<li><a href="{% url 'contactus' %}">Contact Us</a></li>-->
+
+<!--					</ul>-->
+
+
+<!--				  </div>-->
+<!--			</div>-->
+
+
+<!--			<div class="col-lg-6 mb-3 text-left">-->
+<!--                      <h3 class="head-after"></h3>-->
+<!--				<div class="mt-3 footer-contact">-->
+<!--					<br>-->
+<!--					<img src="{% static 'images/payment-logo.png'%}"/>-->
+
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+
+<!--<div id="sub-footer" class="sub-footer-bg">-->
+<!--	<div class="container">-->
+<!--		<div class="row">-->
+<!--			<div class="col-lg-6 text-left">-->
+<!--				<p><b> &copy; 2021 Wisdom Market Research. All rights reserved</b></p>-->
+<!--			</div>-->
+<!--			<div class="col-lg-6 text-right" id="ftpd">-->
+<!--&lt;!&ndash;				<p>Powered by <b>Worldwide Market Reports.</b></p>&ndash;&gt;-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
 <div class="backto-top-btn">
 <span class="top-btn btn btn-primary"><i class="icon-chevron-sign-up icon-2x"></i></span>
 </div>

@@ -166,7 +166,122 @@
 		</div>
 	</div>
 
+<style>
+  .container-fluid {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 1rem 0;
+  }
 
+  .container {
+    padding: 0 15px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .heading {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .item1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .img-responsive {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 55px;
+    width:55px;
+  }
+
+  .title1 {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  .para {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+</style>
+
+<div class="container-fluid" style="background-image: url({% static 'images/sample-text-bg.jpg' %});">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading">
+        <div>
+          <span class="new_span" style="font-size: 30px";>FRESH PERSPECTIVES<br> NEW DATA AND INSIGHTS</span>
+        </div>
+        <hr>
+      </h2>
+	</div>
+	  <div class="row">
+		  <div class="item1 col-12 col-sm-6 col-md-4">
+			<img class="img-responsive" alt="Sample" src="{% static 'images/report_icon.png' %}">
+			<div class="title1">1.5 Million Market <br>Research Reports</div>
+			<p class="para">Reports include detailed research, sales data and market information along with analysis, context also provide the complete picture of the past, present and future of key markets.</p>
+		  </div>
+
+		  <div class="item1 col-12 col-sm-6 col-md-4">
+			<img class="img-responsive" alt="Sample" src="{% static 'images/report_icon.png' %}">
+			<div class="title1">100+ Verified <br>Publishers</div>
+			<p class="para">With global coverage of key new products launched, WMR is your destination for data, analysis and insights and innovation.</p>
+		  </div>
+
+		  <div class="item1 col-12 col-sm-6 col-md-4">
+			<img class="img-responsive" alt="Sample" src="{% static 'images/report_icon.png' %}">
+			<div class="title1">Trusted <br>Insights</div>
+			<p class="para">Make the right decisions with forward-thinking insights, verified peer-driven research, and metrics and data.</p>
+		  </div>
+
+		  <div class="item1 col-12 col-sm-6 col-md-4">
+			<img class="img-responsive" alt="Sample" src="{% static 'images/report_icon.png' %}">
+			<div class="title1">Forecast and <br> Market Sizing</div>
+			<p class="para">WMR is a fast, reliable database of global market information, including sizes, segmentation, market shares and forecast.</p>
+		  </div>
+
+		  <div class="item1 col-12 col-sm-6 col-md-4">
+			<img class="img-responsive" alt="Sample" src="{% static 'images/report_icon.png' %}">
+			<div class="title1">Market<br> Analysis</div>
+			<p class="para">A variety of research and insight services available to help you grow your business and understand market updates/brands more effectively.</p>
+		  </div>
+	  </div>
+    </div>
+  </div>
+</div>
 <!--<div id="our-clients1" class="carousel-bg">-->
 <!--	<div class="container mt-4">-->
 <!--		<div class="row ourClient" >-->
