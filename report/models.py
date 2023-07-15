@@ -20,8 +20,12 @@ class Report(models.Model):
     list_of_figures = RichTextField(blank=True,null=True)
     published_date = models.DateField()
     no_of_pages = models.IntegerField(default=100)
-    single_user_price = models.IntegerField(default=2000)
-    corporate_user_price = models.IntegerField(default=4000)
+    strategic_report =  models.IntegerField(default=899)
+    quantitative_report = models.IntegerField(default=1650)
+    single_user_price = models.IntegerField(default=3650)
+    multi_user_price = models.IntegerField(default=4500)
+    corporate_user_price = models.IntegerField(default=6500)
+
     # upload_by = models.ForeignKey(User,on_delete=models.SET_NULL, null=True)
 
     def __str__(self):

@@ -1310,7 +1310,7 @@ select.form-control:not([size]):not([multiple]) {
 	color: #1a1a1a;
 }
 .rd-page-title {
-	color: #7dba25;
+	color: #10073f;
 	/*text-transform: uppercase; */
 	font-size: 18px;
 	font-weight: 800;
@@ -2323,7 +2323,7 @@ input.search-submit {
 
 .a_underline:hover {
  text-decoration:underline;
- color:#7dba25;
+ color:#10073f;
  text-decoration-thickness: 3px;
 }
 

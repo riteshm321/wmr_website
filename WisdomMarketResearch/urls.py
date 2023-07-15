@@ -22,7 +22,7 @@ from django.contrib.sitemaps.views import sitemap
 # from report.sitemaps import ReportSitemap
 from report.views import (indexView,categoryPage,publisherPage,aboutus,contactus,
                           latestReports,thankyouPage,search_report_list,servicesPage,subscribeForm,
-                          privacyPolicy,termsandconditions,index_header,become_publisher,publisher_list,success)
+                          privacyPolicy,termsandconditions,index_header,become_publisher,publisher_list,success,research_methodology,refund_policy)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +30,8 @@ urlpatterns = [
     path('index/', index_header, name='indexheader'),
     path('latest-reports/', latestReports, name='latestreports'),
     path('about-us/', aboutus, name='aboutus'),
+    path('research-methodology/', research_methodology, name='research_methodology'),
+    path('refund-policy/', refund_policy, name='refund_policy'),
     path('contact-us/', contactus, name='contactus'),
     path('thank-you/', thankyouPage, name='thankyou'),
     path('search-reports/', search_report_list, name='search_report_list'),

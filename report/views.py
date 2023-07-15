@@ -32,6 +32,12 @@ def aboutus(request):
 def servicesPage(request):
     return render(request,'base/services.html')
 
+def research_methodology(request):
+    return render(request,'base/research_methodology.html')
+
+def refund_policy(request):
+    return render(request,'base/refund-policy.html')
+
 def contactus(request):
     if request.method == 'GET':
         form = ContactForm()
@@ -437,7 +443,7 @@ message = "This is a test email message."
 # smtp_port = 587
 # username = "ritesh.majumdar@wisdommarketresearch.com"
 # sender_password = "mh16bt5305@"
-sender_password = "RitMaj@789"
+sender_password = "Nopassword@321"
 
 
 

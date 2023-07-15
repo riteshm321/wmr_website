@@ -190,7 +190,7 @@
                 </div>
                   <div class="col-lg-9 col-sm-9 post-content">
                     <h3 class="post-title reportsTitle">
-                    <a href="{% url 'reports:reportpage' report.slug %}" class="transicion">{{report.title}}</a>
+                    <a href="{% url 'reports:reportpage' report.slug %}" class="transicion" style="color:#10073f;">{{report.title}}</a>
                     </h3>
                     <div class="reportsContent">
                     <table class="table table-bordered">
@@ -224,17 +224,23 @@
 </div>
 <div class="clearfix">&nbsp;</div>
 </div>
-        <div class="col-lg-3 col-md-12 col-sm-12 mt-5">
-            <div class="card">
+        <div class="col-lg-3 col-md-12 col-sm-12 mt-5" >
+            <div class="card" style="width: 334px">
                   <div class="card-header" style="background-color:#0b9ad7;color:white">
                       <strong>Purchase options</strong>
                   </div>
                   <div class="card-body" >
                       <form method="post" action="{% url 'reports:checkout' report.id %}">
                           {% csrf_token %}
-                      <p class="card-text"><input type="radio" name="price" checked="checked" value="{{report.single_user_price}}"> Single User :   <strong>${{report.single_user_price}}</strong></p>
+                           <p class="card-text"><input type="radio" name="price" checked="checked" value="{{report.strategic_report}}"> Strategic Report:<strong>${{report.strategic_report}}</strong></p>
                     <hr>
-                          <p class="card-text" ><input type="radio" name="price" value="{{report.corporate_user_price}}"> Corporate User : <strong>${{report.corporate_user_price}}</strong></p>
+                           <p class="card-text"><input type="radio" name="price"  value="{{report.quantitative_report}}"> Quantitative Analysis/Excel:<strong>${{report.quantitative_report}}</strong></p>
+                    <hr>
+                           <p class="card-text"><input type="radio" name="price"  value="{{report.single_user_price}}"> Single User+RUS/UKR WAR Impact:<strong>${{report.single_user_price}}</strong></p>
+                    <hr>
+                      <p class="card-text"><input type="radio" name="price"  value="{{report.multi_user_price}}"> Multi User:<strong>${{report.multi_user_price}}</strong></p>
+                    <hr>
+                          <p class="card-text" ><input type="radio" name="price" value="{{report.corporate_user_price}}"> Corporate User:<strong>${{report.corporate_user_price}}</strong></p>
                      <hr style="color:white;">
 <!--       <button type="submit" class="btn btn-primary btn-block" style="background-color:#f39c12; border-color:#f39c12"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>-->
                        <button type="submit" class="button-animated btn-block"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>
@@ -242,27 +248,114 @@
                   </div>
           </div>
 
-         <div class="card sticky-top" style="top: 100px;z-index:9;">
-                  <div class="card-header" style="background-color:#0b9ad7;color:white">
-                      <strong>Request Sample Report</strong>
-                  </div>
-                  <div class="card-body" >
-                      <form method="post">
-                          <h4>{{form.errors}}</h4>ls
-						{% csrf_token %}
-						{{form.full_name}}
-						{{form.corporate_email}}
-						{{ form.country }}
-						{{ form.phone }}
-						{{ form.job_title }}
-						{{ form.company }}
-						{{ form.comment }}
-						<button type='submit' class='btn btn-primary align-middle'><strong>Submit</strong></button>
-<!--							<button type="submit" class="btn btn-primary">Go somewhere</button>-->
 
-					 </form>
-                  </div>
-          </div>
+
+
+
+  <style>
+    .callout {
+      font-size: 15px;
+      color: #444;
+      border: 1px solid #fff;
+      background-color: #fff;
+    }
+
+    .panel-heading {
+      text-align: left;
+      font-size: 17px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .callout {
+        font-size: 12px;
+      }
+
+      .panel-heading {
+        font-size: 15px;
+        background-color:#0b9ad7;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .callout {
+        font-size: 10px;
+      }
+
+      .panel-heading {
+        font-size: 12px;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  </style>
+
+  <div class="card callout mobileuifont" style="width: 334px;">
+    <div class="panel-group" id="reletedreports">
+      <div class="panel panel-primary">
+        <div class="card-header" style="background-color:#0b9ad7;color:white;"><b>Why Wisdom Market Research?</b></div>
+      </div>
+      <br>
+      <div>
+        <h3><img src="{% static 'images/report_customisation.png' %}" style="height:40px;width:40px;">&nbsp;&nbsp;<strong>Report Customization</strong></h3>
+        <p>Our market research organization provides tailored report customization support to meet the specific needs of our clients. We offer flexible options to customize research reports, ensuring that they align with the unique requirements and preferences of each client.</p>
+        <hr>
+        <h3><img src="{% static 'images/report_format.png' %}" style="height:40px;width:40px;"> &nbsp;<strong>Report Format</strong></h3>
+        <p>Our research reports are available in all major ones like Word, PDF, PPT, Excel, Etc</p>
+        <hr>
+        <h3><img src="{% static 'images/post_purchase_support.png' %}" style="height:40px;width:40px;">&nbsp;&nbsp;<strong>Post Purchase Support</strong></h3>
+        <p>We prioritize client satisfaction by offering comprehensive post-purchase support, assisting with inquiries and providing guidance to maximize the value of our research services.</p>
+        <hr>
+        <h3><img src="{% static 'images/bestinclass.png' %}" style="height:40px;width:40px;">&nbsp;&nbsp;<strong>Best in Class</strong></h3>
+        <p>Our market research organization delivers top-notch, high-quality reports to our clients. With meticulous attention to detail, comprehensive analysis, and accurate data interpretation, we ensure that our reports are reliable, insightful, and provide valuable information for strategic decision-making.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--         <div class="card sticky-top" style="top: 100px;z-index:9;">-->
+<!--                  <div class="card-header" style="background-color:#0b9ad7;color:white">-->
+<!--                      <strong>Request Sample Report</strong>-->
+<!--                  </div>-->
+<!--                  <div class="card-body" >-->
+<!--                      <form method="post">-->
+<!--                          <h4>{{form.errors}}</h4>ls-->
+<!--						{% csrf_token %}-->
+<!--						{{form.full_name}}-->
+<!--						{{form.corporate_email}}-->
+<!--						{{ form.country }}-->
+<!--						{{ form.phone }}-->
+<!--						{{ form.job_title }}-->
+<!--						{{ form.company }}-->
+<!--						{{ form.comment }}-->
+<!--						<button type='submit' class='btn btn-primary align-middle'><strong>Submit</strong></button>-->
+<!--&lt;!&ndash;							<button type="submit" class="btn btn-primary">Go somewhere</button>&ndash;&gt;-->
+
+<!--					 </form>-->
+<!--                  </div>-->
+<!--          </div>-->
 
 
 <!--          <div class="card">-->
