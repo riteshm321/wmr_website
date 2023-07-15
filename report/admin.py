@@ -73,7 +73,7 @@ class SliderAdmin(admin.ModelAdmin):
 admin.site.register(Report,ReportAdmin)
 admin.site.register(Publisher,PublisherAdmin)
 admin.site.register(Category,CategoryAdmin)
-# admin.site.register(Lead,LeadAdmin)
+admin.site.register(Lead,LeadAdmin)
 admin.site.register(SliderImage,SliderAdmin)
 admin.site.register(Billing_Details)
 admin.site.register(Contact_Us,ContactUsAdmin)

@@ -109,15 +109,18 @@ def requestSample(request,id):
 
             lead_form.save()
 
-            emailBody = 'Report Code:' + report.publisher.publisher_code+'-'+ str(report.id) +'\n\n' +'Report Name:'+ report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: '+ lead_form.corporate_email + '\n\n' + 'Phone:' + str(lead_form.phone) + '\n\n' + 'Country:' + str(lead_form.country) +'\n\n' + 'Category:'+ report.category.name +'\n\n'+'Publisher :'+report.publisher.name+ '\n\n' +'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title +'\n\n' +'Price:' + str(report.single_user_price) +'\n\n' +'Comments:' + lead_form.comment
-            send_mail(
-                'Lead - Sample Request',
-                 emailBody,
-                'sales@wisdommarketresearch.com',
-                ['leads@affluencemarketreports.com'],
-                fail_silently=False,
-            )
-            send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
+            # emailBody = 'Report Code:' + report.publisher.publisher_code+'-'+ str(report.id) +'\n\n' +'Report Name:'+ report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: '+ lead_form.corporate_email + '\n\n' + 'Phone:' + str(lead_form.phone) + '\n\n' + 'Country:' + str(lead_form.country) +'\n\n' + 'Category:'+ report.category.name +'\n\n'+'Publisher :'+report.publisher.name+ '\n\n' +'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title +'\n\n' +'Price:' + str(report.single_user_price) +'\n\n' +'Comments:' + lead_form.comment
+            # send_mail(
+            #     'Lead - Sample Request',
+            #      emailBody,
+            #     'sales@wisdommarketresearch.com',
+            #     ['leads@affluencemarketreports.com'],
+            #     fail_silently=False,
+            # )
+            # send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
+            # send_email(sender_email, receiver_email, subject, message, smtp_server, smtp_port, username, password)
+
+            send_email(sender_email, sender_password, recipient_email, subject, message)
             return redirect('thankyou')
         else:
             print('Form invalid')
@@ -384,6 +387,61 @@ def subscribeForm(request):
         send_simple_message()
 
     return redirect('thankyou')
+
+
+
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+def send_email(sender_email, sender_password, recipient_email, subject, message):
+    # Create a multipart message
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = recipient_email
+    msg['Subject'] = subject
+
+    # Attach the message to the email
+    msg.attach(MIMEText(message, 'plain'))
+
+    try:
+        # Create a secure SSL/TLS connection with the SMTP server
+        server = smtplib.SMTP_SSL('smtp.zoho.in', 465)  # Replace with your SMTP server address and port
+
+        # Log in to the email account
+        server.login(sender_email, sender_password)
+
+        # Send the email
+        server.sendmail(sender_email, recipient_email, msg.as_string())
+
+        # Close the connection
+        server.quit()
+
+        print('Email sent successfully!')
+    except Exception as e:
+        print('An error occurred while sending the email:', str(e))
+
+# Usage example
+# sender_email = 'sender@example.com'
+# sender_password = 'password'
+# recipient_email = 'recipient@example.com'
+# subject = 'Hello from Python'
+# message = 'This is the body of the email.'
+# Usage example
+sender_email = "ritesh.majumdar@wisdommarketresearch.com"
+# sender_email = "javedattar9999@gmail.com"
+recipient_email = "javedattar99@gmail.com"
+subject = "Test Email"
+message = "This is a test email message."
+# smtp_server = "smtp.zoho.in"
+# smtp_port = 587
+# username = "ritesh.majumdar@wisdommarketresearch.com"
+# sender_password = "mh16bt5305@"
+sender_password = "RitMaj@789"
+
+
+
+
 
 
 def send_simple_message(name,title,email):

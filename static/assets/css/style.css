@@ -2296,8 +2296,8 @@ input.search-submit {
   line-height: 1.15;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  background: #f9d342;
-  color: #7dba25;
+  background: #0b9ad7;
+  color: white;
   border: 1px solid transparent;
   vertical-align: middle;
   text-shadow: none;
@@ -2323,7 +2323,7 @@ input.search-submit {
 
 .a_underline:hover {
  text-decoration:underline;
- color:#0b9ad7;
+ color:#7dba25;
  text-decoration-thickness: 3px;
 }
 

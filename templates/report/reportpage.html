@@ -94,9 +94,9 @@
 
 					</ul>
 					<ul class="navbar-nav ml-auto" id="mrpt">
-						<li class="nav-item"><a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></button></a></li>
+						<li class="nav-item"><a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Free Sample </strong></span></button></a></li>
 						<li class="nav-item"> <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-danger"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a></li>
-						<li class="nav-item"><a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-primary"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buying</strong></span></button> </b> </a></li>
+						<li class="nav-item"><a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-primary"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buy</strong></span></button> </b> </a></li>
 <!--						<li class="nav-item"><a href="#"><b><button class="btncut"><span><i class="icon-user"></i> &nbsp; Speak To Analyst</span></button> </b> </a></li>-->
 					</ul>
 				</div>
@@ -120,7 +120,7 @@
 </div>
 <div class="media_box mb-2">
 <div class="media ">
-<img src="{% static 'images/research 1.jpg' %}" height="200px" width="160px" alt="Market Research Report" title="Market Research Report" class="align-self-start mr-4 d-none d-sm-block img-responsive">
+<img src="{% static 'images/research_report.png' %}" height="200px" width="160px" alt="Market Research Report" title="Market Research Report" class="align-self-start mr-4 d-none d-sm-block img-responsive">
 <div class="media-body" >
   <h1 class="rd-page-title">
 	{{report.title}}	</h1>
@@ -132,9 +132,9 @@
 <!--		<li><span><b>Publisher</b> : {{report.publisher.name}}</span></li>-->
 	</ul>
 	<div id="calltoac">
-        <a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></button></a>
+        <a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Free Sample </strong></span></button></a>
         <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-danger"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a>
-        <a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-primary"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buying</strong></span></button> </b> </a>
+        <a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-primary"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buy</strong></span></button> </b> </a>
 <!--        <a href="{% url 'reports:covidrequest' report.id %}"><button class="btn btn-danger" style="background-color:#0b9ad7;border:none;"><span> &nbsp;<strong>COVID-19 Impact Analysis</strong> </span></button></a>-->
 	</div>
 </div>
@@ -185,7 +185,7 @@
                   <div class="row">
                   <div class="col-lg-3 col-sm-3">
                   <div class="reportsImg">
-                  <a href="#"> <img src="{% static 'images/market-report.jpg' %}" height="200px" width="170px"  alt="Market Research Report" title="Market Research Report" class="img-post img-responsive"></a>
+                  <a href="#"> <img src="{% static 'images/research_report.png' %}" height="200px" width="170px"  alt="Market Research Report" title="Market Research Report" class="img-post img-responsive"></a>
                  </div>
                 </div>
                   <div class="col-lg-9 col-sm-9 post-content">
@@ -227,7 +227,7 @@
         <div class="col-lg-3 col-md-12 col-sm-12 mt-5">
             <div class="card">
                   <div class="card-header" style="background-color:#0b9ad7;color:white">
-                      <strong>Choose License Type</strong>
+                      <strong>Purchase options</strong>
                   </div>
                   <div class="card-body" >
                       <form method="post" action="{% url 'reports:checkout' report.id %}">
@@ -248,7 +248,7 @@
                   </div>
                   <div class="card-body" >
                       <form method="post">
-                          <h4>{{form.errors}}</h4>
+                          <h4>{{form.errors}}</h4>ls
 						{% csrf_token %}
 						{{form.full_name}}
 						{{form.corporate_email}}

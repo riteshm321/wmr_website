@@ -103,7 +103,7 @@
                                 <div class="card">
 									<div class="row">
 										<div class="col-sm-12">
-											<a href="{% url 'reports:reportpage' report.slug %}" class="a_underline"><h4 style="color:black;" ><strong>{{report.title | title }}</strong></h4></a>
+											<a href="{% url 'reports:reportpage' report.slug %}" class="a_underline"><h4 style="color:#7dba25;" ><strong>{{report.title | title }}</strong></h4></a>
                                             <p>No. of Pages: &nbsp;&nbsp;{{report.no_of_pages}} </p>
 											<hr>
 											<p>{{report.summary | truncatechars:280 | safe }}</p><br>
