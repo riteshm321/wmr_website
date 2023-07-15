@@ -1,7 +1,7 @@
 
 
 {% extends 'base.html'%}
-
+{% load static %}
 {% block title %} Inquiry Before Buying | Affluence Market Report {% endblock %}
 
 {% block body %}
@@ -44,37 +44,86 @@
 					  </div>
 					</div>
         </div>
-        <div class="col-lg-4 col-md-8 col-sm-12">
-          <div class="card">
-                  <div class="card-header" style="background-color:#0b9ad7;color:white">
-                      <strong>Why Choose Us ?</strong>
-                  </div>
-                  <div class="card-body" >
+        <style>
+    .callout {
+      font-size: 15px;
+      color: #444;
+      border: 1px solid #fff;
+      background-color: #fff;
+    }
 
-                      <p class="card-text">24/7 Research support</p>
-                      <p class="card-text">Quality assurance</p>
-                      <p class="card-text">Information security</p>
+    .panel-heading {
+      text-align: left;
+      font-size: 17px;
+    }
 
+    h3 {
+      font-size: 20px;
+    }
 
+    p {
+      font-size: 16px;
+    }
 
-                  </div>
-          </div>
-              <div class="card">
-                  <div class="card-header" style="background-color:#0b9ad7;color:white">
-                      <strong>Support</strong>
-                  </div>
-                  <div class="card-body" >
- <p><i class="icon-phone"></i>&nbsp; U.S: <a href="tel:+1-424-256-1722">&nbsp; +1-(424) 256-1722</a></p>
-						  <p><i class="icon-phone"></i>&nbsp; U.K:<a href="tel:+44 1158 88 1333">&nbsp; +44 1158 88 1333</a></h5></p>
+    @media (max-width: 768px) {
+      .callout {
+        font-size: 12px;
+      }
 
-						  <p><i class="icon-envelope"></i><a href='mailto:sales@wisdommarketresearch.com'> &nbsp;<span class="__cf_email__" >sales@wisdommarketresearch.com</span></a></p>
+      .panel-heading {
+        font-size: 15px;
+        background-color:#0b9ad7;
+      }
 
+      h3 {
+        font-size: 18px;
+      }
 
+      p {
+        font-size: 14px;
+      }
+    }
 
+    @media (max-width: 480px) {
+      .callout {
+        font-size: 10px;
+      }
 
-                  </div>
-          </div>
-        </div>
+      .panel-heading {
+        font-size: 12px;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  </style>
+
+  <div class="card callout mobileuifont" style="width: 334px;">
+    <div class="panel-group" id="reletedreports">
+      <div class="panel panel-primary">
+        <div class="card-header" style="background-color:#0b9ad7;color:white;"><b>Why Wisdom Market Research?</b></div>
+      </div>
+      <br>
+      <div>
+        <h3><img src="{% static 'images/report_customisation.png' %}" style="height:40px;width:40px;">&nbsp;&nbsp;<strong>Report Customization</strong></h3>
+        <p>Our market research organization provides tailored report customization support to meet the specific needs of our clients. We offer flexible options to customize research reports, ensuring that they align with the unique requirements and preferences of each client.</p>
+        <hr>
+        <h3><img src="{% static 'images/report_format.png' %}" style="height:40px;width:40px;"> &nbsp;<strong>Report Format</strong></h3>
+        <p>Our research reports are available in all major ones like Word, PDF, PPT, Excel, Etc</p>
+        <hr>
+        <h3><img src="{% static 'images/post_purchase_support.png' %}" style="height:40px;width:40px;">&nbsp;&nbsp;<strong>Post Purchase Support</strong></h3>
+        <p>We prioritize client satisfaction by offering comprehensive post-purchase support, assisting with inquiries and providing guidance to maximize the value of our research services.</p>
+        <hr>
+        <h3><img src="{% static 'images/bestinclass.png' %}" style="height:40px;width:40px;">&nbsp;&nbsp;<strong>Best in Class</strong></h3>
+        <p>Our market research organization delivers top-notch, high-quality reports to our clients. With meticulous attention to detail, comprehensive analysis, and accurate data interpretation, we ensure that our reports are reliable, insightful, and provide valuable information for strategic decision-making.</p>
+      </div>
+    </div>
+  </div>
     </div>
 </div>
 
