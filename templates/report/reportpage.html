@@ -57,11 +57,11 @@
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link" href="{% url 'publisher_list' %}">Publishers</a>
+							<a class="nav-link" href="{% url 'research_methodology' %}">Methodology</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{% url 'latestreports' %}">Latest Reports</a>
-						</li>
+<!--						<li class="nav-item">-->
+<!--							<a class="nav-link" href="{% url 'latestreports' %}">Latest Reports</a>-->
+<!--						</li>-->
                        <li class="nav-item dropdown">
 						   <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">About Us</a>
 							<ul class="dropdown-menu" style="min-width:5rem;font-size: 14px;background-color:#fff;">
@@ -227,20 +227,21 @@
         <div class="col-lg-3 col-md-12 col-sm-12 mt-5" >
             <div class="card" style="width: 334px">
                   <div class="card-header" style="background-color:#0b9ad7;color:white">
-                      <strong>Purchase options</strong>
+                      <b style="font-size:20px;">Purchase options</b>
                   </div>
                   <div class="card-body" >
                       <form method="post" action="{% url 'reports:checkout' report.id %}">
                           {% csrf_token %}
-                           <p class="card-text"><input type="radio" name="price" checked="checked" value="{{report.strategic_report}}"> Strategic Report:<strong>${{report.strategic_report}}</strong></p>
+                          <p><b>Quick Options</b></p>
+                           <p class="card-text"><input type="radio" name="price" checked="checked" value="{{report.strategic_report}}"> Strategic Report&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.strategic_report}}</b></p>
                     <hr>
-                           <p class="card-text"><input type="radio" name="price"  value="{{report.quantitative_report}}"> Quantitative Analysis/Excel:<strong>${{report.quantitative_report}}</strong></p>
+                           <p class="card-text"><input type="radio" name="price"  value="{{report.quantitative_report}}"> Quantitative Analysis&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.quantitative_report}}</b></p>
+                    <p><b>Prime Options</b></p>
+                           <p class="card-text"><input type="radio" name="price"  value="{{report.single_user_price}}"> Single User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.single_user_price}}</b></p>
                     <hr>
-                           <p class="card-text"><input type="radio" name="price"  value="{{report.single_user_price}}"> Single User+RUS/UKR WAR Impact:<strong>${{report.single_user_price}}</strong></p>
+                      <p class="card-text"><input type="radio" name="price"  value="{{report.multi_user_price}}"> Multi User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.multi_user_price}}</b></p>
                     <hr>
-                      <p class="card-text"><input type="radio" name="price"  value="{{report.multi_user_price}}"> Multi User:<strong>${{report.multi_user_price}}</strong></p>
-                    <hr>
-                          <p class="card-text" ><input type="radio" name="price" value="{{report.corporate_user_price}}"> Corporate User:<strong>${{report.corporate_user_price}}</strong></p>
+                          <p class="card-text" ><input type="radio" name="price" value="{{report.corporate_user_price}}"> Corporate User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.corporate_user_price}}</b></p>
                      <hr style="color:white;">
 <!--       <button type="submit" class="btn btn-primary btn-block" style="background-color:#f39c12; border-color:#f39c12"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>-->
                        <button type="submit" class="button-animated btn-block"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>
@@ -314,7 +315,7 @@
   <div class="card callout mobileuifont" style="width: 334px;">
     <div class="panel-group" id="reletedreports">
       <div class="panel panel-primary">
-        <div class="card-header" style="background-color:#0b9ad7;color:white;"><b>Why Wisdom Market Research?</b></div>
+        <div class="card-header" style="background-color:#0b9ad7;color:white;"><b style="font-size:20px;">Why WMR ?</b></div>
       </div>
       <br>
       <div>

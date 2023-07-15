@@ -54,6 +54,7 @@ def contactus(request):
                 ['leads@affluencemarketreports.com'],
                 fail_silently=False,
             )
+
             return redirect('thankyou')
     return render(request,'base/contact-us.html',{'form':form})
 
@@ -71,19 +72,21 @@ def reportPage(request,slug):
             if request.POST['comment'] == "":
                 lead_form.comment = ""
             lead_form.save()
-            emailBody = 'Report Code:' + report.publisher.publisher_code + '-' + str(
+            message = 'Report Code:' + report.publisher.publisher_code + '-' + str(
                 report.id) + '\n\n' + 'Report Name:' + report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: ' + lead_form.corporate_email + '\n\n' + 'Phone:' + str(
                 lead_form.phone) + '\n\n' + 'Country:' + str(
                 lead_form.country) + '\n\n' + 'Category:' + report.category.name + '\n\n' + 'Publisher :' + report.publisher.name + '\n\n' + 'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title + '\n\n' + 'Price:' + str(
                 report.single_user_price) + '\n\n' + 'Comments:' + lead_form.comment
-            send_mail(
-                'Lead - Sample Request',
-                emailBody,
-                'sales@wisdommarketresearch.com',
-                ['leads@affluencemarketreports.com'],
-                fail_silently=False,
-            )
-            send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
+            subject = 'Lead - Sample Request'
+            # send_mail(
+            #     'Lead - Sample Request',
+            #     emailBody,
+            #     'sales@wisdommarketresearch.com',
+            #     ['leads@affluencemarketreports.com'],
+            #     fail_silently=False,
+            # )
+            # send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
+            send_email(sender_email, sender_password, recipient_email, subject, message)
 
             return redirect('thankyou')
         else:
@@ -115,7 +118,8 @@ def requestSample(request,id):
 
             lead_form.save()
 
-            # emailBody = 'Report Code:' + report.publisher.publisher_code+'-'+ str(report.id) +'\n\n' +'Report Name:'+ report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: '+ lead_form.corporate_email + '\n\n' + 'Phone:' + str(lead_form.phone) + '\n\n' + 'Country:' + str(lead_form.country) +'\n\n' + 'Category:'+ report.category.name +'\n\n'+'Publisher :'+report.publisher.name+ '\n\n' +'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title +'\n\n' +'Price:' + str(report.single_user_price) +'\n\n' +'Comments:' + lead_form.comment
+            message = 'Report Code:' + report.publisher.publisher_code+'-'+ str(report.id) +'\n\n' +'Report Name:'+ report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: '+ lead_form.corporate_email + '\n\n' + 'Phone:' + str(lead_form.phone) + '\n\n' + 'Country:' + str(lead_form.country) +'\n\n' + 'Category:'+ report.category.name +'\n\n'+'Publisher :'+report.publisher.name+ '\n\n' +'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title +'\n\n' +'Price:' + str(report.single_user_price) +'\n\n' +'Comments:' + lead_form.comment
+            subject = 'Lead - Sample Request'
             # send_mail(
             #     'Lead - Sample Request',
             #      emailBody,
@@ -145,15 +149,17 @@ def requestDiscount(request,id):
             if request.POST['comment'] == "":
                 lead_form.comment = ""
             lead_form.save()
-            emailBody = 'Report Code:' + report.publisher.publisher_code+'-'+ str(report.id) +'\n\n' + 'Report Name:'+ report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: '+ lead_form.corporate_email + '\n\n' + 'Phone:' + str(lead_form.phone) + '\n\n' + 'Country:' + str(lead_form.country) +'\n\n' + 'Category:'+ report.category.name +'\n\n'+'Publisher :'+report.publisher.name+ '\n\n' +'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title +'\n\n' +'Price:' + str(report.single_user_price) +'\n\n' +'Comments:' + lead_form.comment
-            send_mail(
-                'Lead - Discount Request',
-                 emailBody,
-                'sales@wisdommarketresearch.com',
-                ['leads@affluencemarketreports.com'],
-                fail_silently=False,
-            )
-            send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
+            message = 'Report Code:' + report.publisher.publisher_code+'-'+ str(report.id) +'\n\n' + 'Report Name:'+ report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: '+ lead_form.corporate_email + '\n\n' + 'Phone:' + str(lead_form.phone) + '\n\n' + 'Country:' + str(lead_form.country) +'\n\n' + 'Category:'+ report.category.name +'\n\n'+'Publisher :'+report.publisher.name+ '\n\n' +'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title +'\n\n' +'Price:' + str(report.single_user_price) +'\n\n' +'Comments:' + lead_form.comment
+            subject = 'Lead - Discount Request'
+            # send_mail(
+            #     'Lead - Discount Request',
+            #      emailBody,
+            #     'sales@wisdommarketresearch.com',
+            #     ['leads@affluencemarketreports.com'],
+            #     fail_silently=False,
+            # )
+            # send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
+            send_email(sender_email, sender_password, recipient_email, subject, message)
             return redirect('thankyou')
         else:
             print('Form invalid')
@@ -172,15 +178,17 @@ def requestInquiry(request,id):
             if request.POST['comment'] == "":
                 lead_form.comment = ""
             lead_form.save()
-            emailBody = 'Report Code:' + report.publisher.publisher_code+'-'+ str(report.id) +'\n\n' +'Report Name:'+ report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: '+ lead_form.corporate_email + '\n\n' + 'Phone:' + str(lead_form.phone) + '\n\n' + 'Country:' + str(lead_form.country) +'\n\n' + 'Category:'+ report.category.name +'\n\n'+'Publisher :'+report.publisher.name+ '\n\n' +'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title +'\n\n' +'Price:' + str(report.single_user_price) +'\n\n' +'Comments:' + lead_form.comment
-            send_mail(
-                'Lead - Inquiry Before Buying Request',
-                 emailBody,
-                'sales@wisdommarketresearch.com',
-                ['leads@affluencemarketreports.com'],
-                fail_silently=False,
-            )
-            send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
+            message = 'Report Code:' + report.publisher.publisher_code+'-'+ str(report.id) +'\n\n' +'Report Name:'+ report.title + '\n\n' + 'Client Name:' + lead_form.full_name + '\n\n' 'Client Email: '+ lead_form.corporate_email + '\n\n' + 'Phone:' + str(lead_form.phone) + '\n\n' + 'Country:' + str(lead_form.country) +'\n\n' + 'Category:'+ report.category.name +'\n\n'+'Publisher :'+report.publisher.name+ '\n\n' +'Company:' + lead_form.company + '\n\n' + 'Job Title:' + lead_form.job_title +'\n\n' +'Price:' + str(report.single_user_price) +'\n\n' +'Comments:' + lead_form.comment
+            subject='Lead - Inquiry Before Buying Request'
+            # send_mail(
+            #     'Lead - Inquiry Before Buying Request',
+            #      emailBody,
+            #     'sales@wisdommarketresearch.com',
+            #     ['leads@affluencemarketreports.com'],
+            #     fail_silently=False,
+            # )
+            # send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
+            send_email(sender_email, sender_password, recipient_email, subject, message)
             return redirect('thankyou')
         else:
             print('Form invalid')
@@ -427,22 +435,9 @@ def send_email(sender_email, sender_password, recipient_email, subject, message)
     except Exception as e:
         print('An error occurred while sending the email:', str(e))
 
-# Usage example
-# sender_email = 'sender@example.com'
-# sender_password = 'password'
-# recipient_email = 'recipient@example.com'
-# subject = 'Hello from Python'
-# message = 'This is the body of the email.'
-# Usage example
-sender_email = "ritesh.majumdar@wisdommarketresearch.com"
-# sender_email = "javedattar9999@gmail.com"
-recipient_email = "javedattar99@gmail.com"
-subject = "Test Email"
-message = "This is a test email message."
-# smtp_server = "smtp.zoho.in"
-# smtp_port = 587
-# username = "ritesh.majumdar@wisdommarketresearch.com"
-# sender_password = "mh16bt5305@"
+
+sender_email = "wmr@wisdommarketresearch.com"
+recipient_email = "leads@wisdommarketresearch.com"
 sender_password = "Nopassword@321"
 
 
