@@ -438,7 +438,7 @@ def send_email(sender_email, sender_password, recipient_email, subject, message)
 
 sender_email = "wmr@wisdommarketresearch.com"
 recipient_email = "leads@wisdommarketresearch.com"
-sender_password = "Nopassword@321"
+sender_password = "Nopassword@789"
 
 
 
