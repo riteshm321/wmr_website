@@ -119,3 +119,4 @@ project_sql_queries
 db.sqlite3
 web.config
 config.py
+media/
