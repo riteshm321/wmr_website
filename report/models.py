@@ -20,7 +20,7 @@ class Report(models.Model):
     list_of_figures = RichTextField(blank=True,null=True)
     published_date = models.DateField()
     no_of_pages = models.IntegerField(default=100)
-    strategic_report =  models.IntegerField(default=899)
+    strategic_report = models.IntegerField(default=899)
     quantitative_report = models.IntegerField(default=1650)
     single_user_price = models.IntegerField(default=3650)
     multi_user_price = models.IntegerField(default=4500)
