@@ -94,8 +94,8 @@
 
 					</ul>
 					<ul class="navbar-nav ml-auto" id="mrpt">
-						<li class="nav-item"><a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Free Sample </strong></span></button></a></li>
-						<li class="nav-item"> <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-danger"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a></li>
+						<li class="nav-item"><a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-primary"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Free Sample </strong></span></button></a></li>
+						<li class="nav-item"> <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-primary"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a></li>
 						<li class="nav-item"><a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-primary"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buy</strong></span></button> </b> </a></li>
 <!--						<li class="nav-item"><a href="#"><b><button class="btncut"><span><i class="icon-user"></i> &nbsp; Speak To Analyst</span></button> </b> </a></li>-->
 					</ul>
@@ -200,7 +200,7 @@
                        <td><i class="fa fa-calendar"></i> &nbsp; Date : {{report.published_date | date:"M Y"}}</td>
                     </tr>
                     <tr>
-                    <td><i class="fa fa-user"></i> &nbsp; CAT ID : {{report.category.name}}</td>
+<!--                    <td><i class="fa fa-user"></i> &nbsp; CAT ID : {{report.category.name}}</td>-->
                     <td><i class="fa fa-file"></i> &nbsp;  Pages : {{report.no_of_pages}}</td>
                     </tr>
                     </tbody></table>

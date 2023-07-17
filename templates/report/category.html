@@ -48,12 +48,12 @@
 												<h5><span class="text-left">Date: {{report.published_date | date:"M Y"}}</span>&nbsp;&nbsp;|
                                                  <span class="text-left">Price: ${{report.single_user_price}}</span>
 													  <div class="float-right">
-														<form class = "form-inline" method="post" action="{% url 'reports:indexcheckout' report.id report.single_user_price%}">
-															{% csrf_token %}
+<!--														<form class = "form-inline" method="post" action="{% url 'reports:indexcheckout' report.id report.single_user_price%}">-->
+<!--															{% csrf_token %}-->
 
 														<a class="btn btn-success" href="{% url 'reports:samplerequest' report.id%}"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></a>
-														&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>
-                                                            </form>
+<!--														&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>-->
+<!--                                                            </form>-->
 													</div>
 													  </h5>
 												</p>

@@ -104,6 +104,7 @@ def publisher_list(request):
     publishers = Publisher.objects.all().order_by("name")
     return render(request,'report/publisher_list.html',{'publishers':publishers})
 
+
 def requestSample(request,id):
     report = get_object_or_404(Report, id=id)
     if request.method == 'POST':
@@ -166,6 +167,7 @@ def requestDiscount(request,id):
     else:
         form = LeadForm()
     return render(request, 'report/request-discount.html', {'form':form,'report':report})
+
 
 def requestInquiry(request,id):
     report = get_object_or_404(Report, id=id)

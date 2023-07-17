@@ -40,7 +40,7 @@ def post_save_slug_generator(sender,instance, created, *args, **kwargs):
         if not instance.slug:
             url = instance.meta_title + '-' + str(instance.id)
             instance.slug = slugify(url)
-            instance.url = 'http://www.wisdommarketresearch.com/industry-analysis/' + slugify(url)
+            instance.url = 'http://www.wisdommarketresearch.com/' + slugify(url)
             instance.save()
 
 post_save.connect(post_save_slug_generator,sender=Report)
