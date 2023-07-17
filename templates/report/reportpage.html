@@ -114,7 +114,7 @@
 <ol class="breadcrumb" style="background-color:white;">
 <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
 <!--<li class="breadcrumb-item"><a href="{% url 'category' category.slug %}">{{report.category.name}}</a></li>-->
-<li class="breadcrumb-item active" aria-current="page">{{report.meta_title | title }}</li>
+<li class="breadcrumb-item active" aria-current="page">{{report.title}}</li>
 </ol>
 </nav>
 </div>
@@ -132,8 +132,8 @@
 <!--		<li><span><b>Publisher</b> : {{report.publisher.name}}</span></li>-->
 	</ul>
 	<div id="calltoac">
-        <a href="{% url 'reports:samplerequest' report.id%}"><button class="btn btn-success"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Free Sample </strong></span></button></a>
-        <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-danger"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a>
+        <a href="{% url 'reports:samplerequest' report.id%}"><button class="button-animated2"><span><i class="fas fa-download"></i> &nbsp; Request Free Sample </span></button></a>
+        <a href="{% url 'reports:discountrequest' report.id %}"><button class="btn btn-primary"><span><i class="fas fa-percentage"></i> &nbsp; <strong>Request Discount  </strong></span></button> </a>
         <a href="{% url 'reports:inquiryrequest' report.id %}"><b><button class="btn btn-primary"><span><i class="fas fa-headset"></i> &nbsp; <strong>Inquire Before Buy</strong></span></button> </b> </a>
 <!--        <a href="{% url 'reports:covidrequest' report.id %}"><button class="btn btn-danger" style="background-color:#0b9ad7;border:none;"><span> &nbsp;<strong>COVID-19 Impact Analysis</strong> </span></button></a>-->
 	</div>

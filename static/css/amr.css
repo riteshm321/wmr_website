@@ -39,6 +39,47 @@
   50% { background-color: #7dba25; box-shadow: 0 0 40px #7dba25; }
   100% { background-color: #018749; box-shadow: 0 0 3px #018749; }
 }
+.button-animated2 {
+  background-color: #0b9ad7;
+  -webkit-border-radius: 10px;
+  border-radius: 1px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 18px;
+  padding: 9px 8px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing2 1500ms infinite;
+  -moz-animation: glowing2 1500ms infinite;
+  -o-animation: glowing2 1500ms infinite;
+  animation: glowing2 1500ms infinite;
+}
+@-webkit-keyframes glowing2 {
+  0% { background-color: #018749; -webkit-box-shadow: 0 0 3px #018749; }
+  50% { background-color: #0b9ad7; -webkit-box-shadow: 0 0 40px #0b9ad7; }
+  100% { background-color: #018749; -webkit-box-shadow: 0 0 3px #018749; }
+}
+
+@-moz-keyframes glowing2 {
+  0% { background-color: #018749; -moz-box-shadow: 0 0 3px #018749; }
+  50% { background-color: #0b9ad7; -moz-box-shadow: 0 0 40px #0b9ad7; }
+  100% { background-color: #018749; -moz-box-shadow: 0 0 3px #018749; }
+}
+
+@-o-keyframes glowing2 {
+  0% { background-color: #018749; box-shadow: 0 0 3px #018749; }
+  50% { background-color: #0b9ad7; box-shadow: 0 0 40px #0b9ad7; }
+  100% { background-color: #018749; box-shadow: 0 0 3px #018749; }
+}
+
+@keyframes glowing2 {
+  0% { background-color: #018749; box-shadow: 0 0 3px #018749; }
+  50% { background-color: #7dba25; box-shadow: 0 0 40px #7dba25; }
+  100% { background-color: #018749; box-shadow: 0 0 3px #018749; }
+}
 /*
 .carousel-item {
   height: 85vh;
