@@ -38,7 +38,7 @@ class Report(models.Model):
 def post_save_slug_generator(sender,instance, created, *args, **kwargs):
     if created:
         if not instance.slug:
-            url = instance.meta_title + '-' + str(instance.id)
+            url = instance.keyword + '-' + str(instance.id)
             instance.slug = slugify(url)
             instance.url = 'http://www.wisdommarketresearch.com/' + slugify(url)
             instance.save()
