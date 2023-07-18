@@ -4,6 +4,7 @@ from django.utils.text import slugify
 from django.db.models.signals import post_save
 from ckeditor.fields import RichTextField
 from django.urls import *
+from django.dispatch import receiver
 from django.contrib.auth.models import User
 
 
@@ -34,7 +35,7 @@ class Report(models.Model):
     def get_absolute_url(self):
         return reverse('reports:reportpage',args=[self.slug])
 
-
+@receiver(post_save, sender=Report)
 def post_save_slug_generator(sender,instance, created, *args, **kwargs):
     if created:
         if not instance.slug:
@@ -43,7 +44,7 @@ def post_save_slug_generator(sender,instance, created, *args, **kwargs):
             instance.url = 'http://www.wisdommarketresearch.com/' + slugify(url)
             instance.save()
 
-post_save.connect(post_save_slug_generator,sender=Report)
+# post_save.connect(post_save_slug_generator,sender=Report)
 
 
 class SliderImage(models.Model):
