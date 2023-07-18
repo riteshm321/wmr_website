@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 class Report(models.Model):
     title = models.CharField(max_length=1000)
     keyword = models.CharField(max_length=1000)
-    meta_title = models.CharField(max_length=200)
+    # meta_title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True,null=True,max_length=255)
     url = models.URLField(unique=True, blank=True,null=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
@@ -35,11 +35,12 @@ class Report(models.Model):
     def get_absolute_url(self):
         return reverse('reports:reportpage',args=[self.slug])
 
+
 @receiver(post_save, sender=Report)
 def post_save_slug_generator(sender,instance, created, *args, **kwargs):
     if created:
         if not instance.slug:
-            url = instance.keyword + '-' + str(instance.id)
+            url = str(instance.keyword) + '-' + str(instance.id)
             instance.slug = slugify(url)
             instance.url = 'http://www.wisdommarketresearch.com/' + slugify(url)
             instance.save()
