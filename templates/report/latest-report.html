@@ -42,7 +42,7 @@
                                           {% for report in reports %}
 											<div class="card" >
 													  <div class="card-body">
-														  <a href="{% url 'reports:reportpage' report.slug %}"><h5 class="card-title" style="color:#0b9ad7"><strong>{{report.title}}</strong></h5></a>
+														  <a href="{% url 'reports:reportpage' report.slug %}"><h5 class="card-title" style="color:#10073f"><strong>{{report.title}}</strong></h5></a>
 														  <p class="card-text">{{report.summary | truncatechars:250 | safe }}<a href="{% url 'reports:reportpage' report.slug %}" class="blc"><strong>Read More>></strong></a></p>
 														 <p>
 												<h5><span class="text-left">Date: {{report.published_date | date:"M Y"}}</span>&nbsp;&nbsp;|
