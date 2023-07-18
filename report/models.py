@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 class Report(models.Model):
     title = models.CharField(max_length=1000)
     keyword = models.CharField(max_length=1000)
-    # meta_title = models.CharField(max_length=200)
+    meta_title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True,null=True,max_length=255)
     url = models.URLField(unique=True, blank=True,null=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
