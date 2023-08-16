@@ -103,8 +103,13 @@
       interval: 3000, // Set the rotation interval in milliseconds (e.g., 3 seconds)
       pause: "hover" // Pause the rotation on mouse hover
     });
+//$("#toggleButton").click(function() { $("#targetDiv").toggle(); // This toggles the visibility of the div });
+   $(".expand-button").click(function() { $("#viewdiv").toggle();});
+
   });
 </script>
+
+
 
 
 
@@ -114,13 +119,11 @@
 <div id="our-services" class="our-services-bg">
 <div class="container" >
     			<div class="text-center mb-5">
-					<h3 class="head-after color-primary" style="color:#000000"><strong>Industries</strong></h3>
-
+					<h3 class="head-after color-primary" style="color:#000000"><strong>Trending Categories</strong></h3>
 				</div>
 				<div class="row">
-					{% if categories %}
-
-					{% for category in categories %}
+					{% if categories1 %}
+					{% for category in categories1 %}
 
 					<div class="col-lg-3 col-6">
 						<div class="mb-3 text-center">
@@ -133,16 +136,43 @@
 									<h2 class="text-center"><a href="{% url 'category' category.slug %}" style="color:#0b9ad7;">
 										<span><strong><h4 style="color:#0b9ad7;"> {{category.name }}</h4></strong></span>
 									</a></h2>
-
 					</div>
-
 					{% endfor %}
+
+                    {% else %}
+					   <span> Please Add Categories </span>
+					{% endif %}
+				</div>
+
+					<div id="viewdiv" style="display:none;" class="row">
+						{% if categories2 %}
+					{% for category in categories2 %}
+
+						<div class="col-lg-3 col-6">
+						<div class="mb-3 text-center">
+										<a href="{% url 'category' category.slug %}">
+											<div class="card-img-top img-hover-zoom">
+											<img alt="{{category.name | title }}" title=" {{category.name | title }}" src="{{category.image.url}}" height="75px" width="80px">
+										     </div>
+										</a>
+						</div>
+									<h2 class="text-center"><a href="{% url 'category' category.slug %}" style="color:#0b9ad7;">
+										<span><strong><h4 style="color:#0b9ad7;"> {{category.name }}</h4></strong></span>
+									</a></h2>
+					</div>
+					{% endfor %}
+</div>
                     {% else %}
 					   <span> Please Add Categories </span>
 					{% endif %}
 
 				</div>
-			</div>
+	            <div class="row justify-content-center">
+					<div class="col-12 text-center">
+						<button class="btn btn-primary expand-button"><strong>View All</strong></button>
+					</div>
+			    </div>
+<!--			</div>-->
 </div>
 
 

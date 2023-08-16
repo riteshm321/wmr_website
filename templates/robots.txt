@@ -1,4 +1,4 @@
-Sitemap: https://www.affluencemarketreports.com/sitemap.xml
+Sitemap: https://www.wisdommarketresearch.com/sitemap.xml
 
 User-agent: *
 Disallow: /industry-analysis/request-sample/*

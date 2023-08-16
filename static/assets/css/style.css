@@ -477,7 +477,7 @@ select.form-control:not([size]):not([multiple]) {
 	font-size: 26px
 }
 #header .dropdown.active .dropdown-item:before {
-	content: "\f0d7"
+	content:   "\27A4"; /*  "\f0d7" */
 }
 #header .dropdown-menu .dropdown-item {
 	padding: 10px 10px;
@@ -2547,6 +2547,20 @@ ul.footinfo3ul li a {
     font-family: 'FontAwesome';
     left: 0;
     top: 0
+}
+.category {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/*.expand-button {
+
+  cursor: pointer;
+}
+*/
+.category-content {
+  /*display: none;*/
+  /*margin-top: 10px;*/
 }
 
 
