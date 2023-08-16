@@ -15,9 +15,9 @@ import requests
 def indexView(request):
     reports = Report.objects.all().order_by('-published_date')[:3]
     cat_count = Category.objects.all().count()
-    cat_count1 = int(cat_count // 8)
-    categories = Category.objects.all().order_by("name")
-    categories2 = Category.objects.all().order_by("name")[cat_count1:]
+    cat_count1 = int(cat_count // 4)
+    categories1 = Category.objects.all().order_by("name")[0:8]
+    categories2 = Category.objects.all().order_by("name")[8:]
 
     publishers = Publisher.objects.all().order_by("name")
     query = request.GET.get('searchReport')
@@ -25,7 +25,7 @@ def indexView(request):
     clients = OurClients.objects.all()
 
     return render(request, 'base/index.html',
-                  {'reports': reports, 'categories': categories, 'slider': slider,
+                  {'reports': reports, 'categories1': categories1,'categories2': categories2, 'slider': slider,
                    'publishers': publishers, 'clients': clients})
 
 
