@@ -16,8 +16,9 @@ def indexView(request):
     reports = Report.objects.all().order_by('-published_date')[:3]
     cat_count = Category.objects.all().count()
     cat_count1 = int(cat_count // 8)
-    categories1 = Category.objects.all().order_by("name")[0:cat_count1]
+    categories1 = Category.objects.all().order_by("name")
     categories2 = Category.objects.all().order_by("name")[cat_count1:]
+
     publishers = Publisher.objects.all().order_by("name")
     query = request.GET.get('searchReport')
     slider = SliderImage.objects.all()
