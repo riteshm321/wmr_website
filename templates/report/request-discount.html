@@ -25,7 +25,7 @@
 						 <h5 style="color:white;">{{report.title | title}}</h5>
 					  </div>
 					  <div class="card-body">
-						<form method="post">
+						<form method="post" action="{% url 'reports:thanksDiscount' report.id %}">
 
                              <h4>{{form.errors}}</h4>
 						{% csrf_token %}

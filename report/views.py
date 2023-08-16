@@ -45,6 +45,19 @@ def refund_policy(request):
     return render(request, 'base/refund-policy.html')
 
 
+def thanks(request,id):
+    report = get_object_or_404(Report, id=id)
+    return render(request,'report/thanks.html')
+
+def thanksDiscount(request,id):
+    report = get_object_or_404(Report, id=id)
+    return render(request, 'report/thanks.html')
+
+
+def thanksInquiry(request,id):
+    report = get_object_or_404(Report, id=id)
+    return render(request, 'report/thanks.html')
+
 def contactus(request):
     if request.method == 'GET':
         form = ContactForm()
@@ -96,7 +109,7 @@ def reportPage(request, slug):
             # send_simple_message(lead_form.full_name, report.title, lead_form.corporate_email)
             send_email(sender_email, sender_password, recipient_email, subject, message)
 
-            return redirect('thankyou')
+            return render(request,'report/thanks.html',{'report': report})
         else:
             print('Form invalid')
     else:
