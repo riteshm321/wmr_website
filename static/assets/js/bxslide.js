@@ -30,7 +30,7 @@ if(window.matchMedia('(max-width: 767px)').matches) {
 }
 var myslider = $('#bx5').bxSlider({
     maxSlides: maxSlides,
-     slideWidth: 160, slideMargin: 5, pager: false, ticker: true, speed: 82000, tickerHover: true, useCSS: false
+     slideWidth: 200, slideMargin: 5, pager: false, ticker: true, speed: 20000, tickerHover: true, useCSS: false
 });
 
 var myslider1 = $('#bx51').bxSlider({

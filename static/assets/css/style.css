@@ -2434,7 +2434,7 @@ input.search-submit {
 
 .footercopyright {
     background: #000;
-    border: 1px solid #e9e9e9
+    border: none;/*1px solid #e9e9e9 */
 }
 
 .footH {

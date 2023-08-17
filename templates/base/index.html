@@ -110,7 +110,56 @@
 </script>
 
 
+<!--<div id="our-clients" class="carousel-bg">-->
+<!--	<div class="container mt-4">-->
+<!--		<div class="row ourClient" >-->
+<!--             <div class="col-md-2 col-sm-3 text-center" >-->
+<!--                  <h3 class="section-title" style="background-color:#0b9ad7;">Our Clients</h3>-->
+<!--             </div>-->
+<!--               <div class="col-md-10 col-sm-9">-->
+<!--                <div class="bx-wrapper" style="max-width:100%;">-->
+<!--                     <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: auto;">-->
+<!--                        <div class="bx-wrapper" style="max-width: 2185px;">-->
+<!--                        	<div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 100px;">-->
+<!--						<ul id="bx5" class="bxslider">-->
+<!--							{% for client in clients %}-->
+<!--						  <li> <a class="thumbnail"> <img alt="{{client.name}}" title="{{client.name}}" src="{{client.image.url}}"> </a> </li>-->
+<!--                             {% endfor %}-->
 
+
+<!--						</ul>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--		</div>-->
+<!--	</div>-->
+<div id="our-clients" class="carousel-bg">
+    <div class="container-fluid mt-4"> <!-- Use container-fluid class -->
+        <div class="row ourClient">
+            <div class="col-md-2 col-sm-3 text-center">
+                <h3 class="section-title" style="background-color:#0b9ad7;">Our Clients</h3>
+            </div>
+            <div class="col-md-10 col-sm-9">
+                <div class="bx-wrapper">
+                    <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: auto;">
+                        <div class="bx-wrapper">
+                            <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 100px;">
+                                <ul id="bx5" class="bxslider">
+                                    {% for client in clients %}
+                                    <li> <a class="thumbnail"> <img alt="{{client.name}}" title="{{client.name}}" src="{{client.image.url}}"> </a> </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -235,32 +284,32 @@
 	    	</div>
 	    </div>
 
-<div id="our-clients" class="carousel-bg">
-	<div class="container mt-4">
-		<div class="row ourClient" >
-             <div class="col-md-2 col-sm-3 text-center" >
-                  <h3 class="section-title" style="background-color:#0b9ad7;">Our Clients</h3>
-             </div>
-               <div class="col-md-10 col-sm-9">
-                <div class="bx-wrapper" style="max-width:100%;">
-                     <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: auto;">
-                        <div class="bx-wrapper" style="max-width: 2185px;">
-                        	<div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 100px;">
-						<ul id="bx5" class="bxslider">
-							{% for client in clients %}
-						  <li> <a class="thumbnail"> <img alt="{{client.name}}" title="{{client.name}}" src="{{client.image.url}}"> </a> </li>
-                             {% endfor %}
+<!--<div id="our-clients" class="carousel-bg">-->
+<!--	<div class="container mt-4">-->
+<!--		<div class="row ourClient" >-->
+<!--             <div class="col-md-2 col-sm-3 text-center" >-->
+<!--                  <h3 class="section-title" style="background-color:#0b9ad7;">Our Clients</h3>-->
+<!--             </div>-->
+<!--               <div class="col-md-10 col-sm-9">-->
+<!--                <div class="bx-wrapper" style="max-width:100%;">-->
+<!--                     <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: auto;">-->
+<!--                        <div class="bx-wrapper" style="max-width: 2185px;">-->
+<!--                        	<div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 100px;">-->
+<!--						<ul id="bx5" class="bxslider">-->
+<!--							{% for client in clients %}-->
+<!--						  <li> <a class="thumbnail"> <img alt="{{client.name}}" title="{{client.name}}" src="{{client.image.url}}"> </a> </li>-->
+<!--                             {% endfor %}-->
 
 
-						</ul>
-							</div>
-						</div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-		</div>
-	</div>
+<!--						</ul>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--		</div>-->
+<!--	</div>-->
 
 <style>
   .container-fluid {
