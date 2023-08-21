@@ -455,7 +455,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 #header .nav-link {
 	padding: 20px 15px;
-	margin: 10px 0;
+	margin: 0px 0;
 	font-weight: 600;
 	text-transform: uppercase
 }
@@ -468,13 +468,14 @@ select.form-control:not([size]):not([multiple]) {
 	min-width: 39rem
 }
 #header .dropdown-menu:before {
-	content: "\27A4";
+	content: "";    /*content: "\27A4";  */
 	font-family: 'FontAwesome';
 	position: absolute;
 	top: -17px;
 	left: 10px;
 	color: #7dba25;
-	font-size: 26px
+	font-size: 20px;
+	transform: rotate(90deg);
 }
 #header .dropdown.active .dropdown-item:before {
 	content:   "\27A4"; /*  "\f0d7" */
