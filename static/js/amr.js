@@ -6,6 +6,7 @@
 console.log('Javascript Working')
 
 
+// You can add event listeners to buttons or use setInterval to create an automatic slider.
 
 
 

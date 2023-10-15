@@ -81,7 +81,7 @@
 <!--								</div>-->
 <!--					         </form>-->
                             <div class="wrapper1">
-							    <form role="search" method="get" class="search-form form" action="">
+							    <form role="search" method="get" class="search-form form" action="{% url 'search_report_list' %}">
 								<label>
 									<span class="screen-reader-text">Search for...</span>
 									<input type="search" class="search-field" placeholder="Search report..." value="" name="s" title="" />
@@ -112,7 +112,7 @@
 <div class="breadcum_list">
 <nav aria-label="breadcrumb">
 <ol class="breadcrumb" style="background-color:white;">
-<li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <!--<li class="breadcrumb-item"><a href="{% url 'category' category.slug %}">{{report.category.name}}</a></li>-->
 <li class="breadcrumb-item active" aria-current="page">{{report.keyword}}</li>
 </ol>

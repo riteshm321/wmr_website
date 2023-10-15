@@ -1235,6 +1235,7 @@ select.form-control:not([size]):not([multiple]) {
 .sub-footer-bg a:hover {
 	color: #fff
 }
+/*
 .backto-top-btn {
 	display: none;
 	position: fixed;
@@ -1255,7 +1256,7 @@ select.form-control:not([size]):not([multiple]) {
 .backto-top-btn i {
 	margin-left: 0;
 	line-height: 50px
-}
+} */
 .txtblck p {
 	color: #2b2b2b;
 	font-weight: 700;
@@ -2563,5 +2564,78 @@ ul.footinfo3ul li a {
   /*display: none;*/
   /*margin-top: 10px;*/
 }
+
+/*----------------------------------------------------------------------------*/
+
+
+/* styles.css */
+.testimonial-slider {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 80px;
+    padding: 20px;
+    background: #fafafa;
+}
+
+.testimonial {
+    display: none;
+    /*width: 100%;*/
+    /*max-width: 800px;*/
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #f9f9f9;
+}
+
+.testimonial img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 10px;
+}
+
+/* Add responsive CSS as needed */
+/*
+
+@media (max-width: 768px) {
+    .testimonial {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial {
+        max-width: 90%;
+    }
+}
+*/
+/* styles.css */
+.arrbutton {
+    margin: 10px;
+    border-radius: 50%; /* Make the button round */
+    border: none;
+    background-color: #3498db; /* Button background color */
+    color: white; /* Button text color */
+    width: 50px; /* Set button width */
+    height: 50px; /* Set button height */
+    font-size: 24px; /* Set font size */
+    cursor: pointer;
+}
+
+/* Styles for arrow icons */
+#prevBtn::before {
+    content: '\2190'; /* Unicode character for left arrow */
+}
+
+#nextBtn::before {
+    content: '\2192'; /* Unicode character for right arrow */
+}
+
+
 
 
