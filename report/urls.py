@@ -3,7 +3,7 @@
 
 
 
-from django.urls import path
+from django.urls import path,include
 from report.views import (reportPage,requestSample,checkout,requestInquiry,
                           requestDiscount,paymentComplete,covid_request,indexcheckout,thanks,thanksDiscount,thanksInquiry)
 app_name = 'reports'
@@ -21,6 +21,7 @@ urlpatterns = [
     path('checkout/<int:id>', checkout, name='checkout'),
     path('checkout/<int:id>/<int:price>', indexcheckout, name='indexcheckout'),
     path('payment/complete', paymentComplete, name='complete'),
+
 
 
 ]

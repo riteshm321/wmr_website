@@ -2568,6 +2568,8 @@ ul.footinfo3ul li a {
 /*----------------------------------------------------------------------------*/
 
 
+
+
 /* styles.css */
 .testimonial-slider {
     text-align: center;
@@ -2589,15 +2591,13 @@ ul.footinfo3ul li a {
 }
 
 .testimonial img {
-    width: 200px;
-    height: 200px;
+    max-width: 100%;
+    height: auto; /* This ensures the image maintains its aspect ratio */
     border-radius: 50%;
     margin-bottom: 20px;
 }
 
-button {
-    margin: 10px;
-}
+
 
 /* Add responsive CSS as needed */
 /*
