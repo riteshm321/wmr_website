@@ -36,35 +36,33 @@
 							</ul>
 						</div>
 					</div>
-				</div>							
-				<div class="col-lg-9">
-					<div id="latest-report-card">
-                                          {% for report in reports %}
-											<div class="card" >
-													  <div class="card-body">
-														  <a href="{% url 'reports:reportpage' report.slug %}"><h5 class="card-title" style="color:#10073f"><strong>{{report.title}}</strong></h5></a>
-														  <p class="card-text">{{report.summary | truncatechars:250 | safe }}<a href="{% url 'reports:reportpage' report.slug %}" class="blc"><strong>Read More>></strong></a></p>
-														 <p>
-												<h5><span class="text-left">Date: {{report.published_date | date:"M Y"}}</span>&nbsp;&nbsp;|
-                                                 <span class="text-left">Price: ${{report.single_user_price}}</span>
-													    <div class="float-right">
-														<form class = "form-inline" method="post" action="{% url 'reports:indexcheckout' report.id report.single_user_price%}">
-															{% csrf_token %}
-
-														<a class="btn btn-success" href="{% url 'reports:samplerequest' report.id%}"><span><i class="fas fa-download"></i> &nbsp; <strong>Request Sample </strong></span></a>
-														&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>
-                                                            </form>
-													</div>
-
-													  </h5>
-
-												</p>
-
-													  </div>
-													</div>
-					                      {% endfor %}
-					</div>
 				</div>
+				<div class="col-lg-9">
+    <div id="latest-report-card" class="row">
+        {% for report in reports %}
+        <div class="card col-lg-12 col-md-6 col-sm-12 mb-4">
+            <div class="card-body">
+                <a href="{% url 'reports:reportpage' report.slug %}">
+                    <h5 class="card-title" style="color:#10073f"><strong>{{report.title}}</strong></h5>
+                </a>
+                <p class="card-text">{{report.summary | truncatechars:250 | safe }}<a href="{% url 'reports:reportpage' report.slug %}" class="blc"><strong>Read More>></strong></a></p>
+                <div class="d-flex justify-content-between mb-3">
+                    <span>Date: {{report.published_date | date:"M Y"}}</span>
+                    <span>Price: ${{report.single_user_price}}</span>
+                </div>
+                <div class="text-center text-lg-right">
+                    <form method="post" action="{% url 'reports:indexcheckout' report.id report.single_user_price%}">
+                        {% csrf_token %}
+                        <a class="btn btn-success mb-2 mr-sm-2" href="{% url 'reports:samplerequest' report.id%}"><i class="fas fa-download"></i>&nbsp;<strong>Request Sample</strong></a>
+                        <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 
 			</div>
 
