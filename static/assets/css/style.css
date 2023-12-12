@@ -2636,6 +2636,19 @@ ul.footinfo3ul li a {
     content: '\2192'; /* Unicode character for right arrow */
 }
 
+#purchasebox
+{
+  margin:0px;
+  padding:0px;
+}
+#purchasebox .card-text
+{
+ font-size:14px;
+}
+
+
+
+
 
 
 

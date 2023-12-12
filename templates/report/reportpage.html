@@ -109,15 +109,27 @@
 <div class="container">
     <div class="row">
 <div class="col-lg-9 col-12 reportdet">
+
 <div class="breadcum_list">
 <nav aria-label="breadcrumb">
 <ol class="breadcrumb" style="background-color:white;">
-<li class="breadcrumb-item"><a href="#">Home</a></li>
-<!--<li class="breadcrumb-item"><a href="{% url 'category' category.slug %}">{{report.category.name}}</a></li>-->
-<li class="breadcrumb-item active" aria-current="page">{{report.keyword}}</li>
+<!--<li class="breadcrumb-item d-sm-inline d-none">Home</li>-->
+<li class="breadcrumb-item d-sm-none"><a href="#">Home</a></li>
+<!--<li class="breadcrumb-item d-sm-inline d-none"><a href="{% url 'category' category.slug %}">{{report.category.name}}</a></li>-->
+<li class="breadcrumb-item active d-block" aria-current="page">{{report.keyword}}</li>
 </ol>
 </nav>
 </div>
+
+<!--<div class="breadcum_list">-->
+<!--    <nav aria-label="breadcrumb">-->
+<!--        <ol class="breadcrumb" style="background-color:white;">-->
+<!--            <li class="breadcrumb-item"><a href="#">Home</a></li>-->
+<!--            &lt;!&ndash;<li class="breadcrumb-item"><a href="{% url 'category' category.slug %}">{{report.category.name}}</a></li>&ndash;&gt;-->
+<!--            <li class="breadcrumb-item active" aria-current="page">{{report.keyword}}</li>-->
+<!--        </ol>-->
+<!--    </nav>-->
+<!--</div>-->
 <div class="media_box mb-2">
 <div class="media ">
 <img src="{% static 'images/research_report.png' %}" height="200px" width="160px" alt="Market Research Report" title="Market Research Report" class="align-self-start mr-4 d-none d-sm-block img-responsive">
@@ -225,23 +237,23 @@
 <div class="clearfix">&nbsp;</div>
 </div>
         <div class="col-lg-3 col-md-12 col-sm-12 mt-5" >
-            <div class="card" style="width: 334px">
+            <div class="card">
                   <div class="card-header" style="background-color:#0b9ad7;color:white">
                       <b style="font-size:20px;">Purchase options</b>
                   </div>
-                  <div class="card-body" >
+                  <div class="card-body" id="purchasebox" >
                       <form method="post" action="{% url 'reports:checkout' report.id %}">
                           {% csrf_token %}
-                          <p><b>Quick Options</b></p>
-                           <p class="card-text"><input type="radio" name="price" checked="checked" value="{{report.strategic_report}}"> Strategic Report&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.strategic_report}}</b></p>
+                          <p><b class="card-text">Quick Options</b></p>
+                           <p class="card-text"><input type="radio" name="price" checked="checked" value="{{report.strategic_report}}"> Strategic Report<b style="color:#039bd8;float:right;margin-right:13px;">${{report.strategic_report}}</b></p>
                     <hr>
-                           <p class="card-text"><input type="radio" name="price"  value="{{report.quantitative_report}}"> Quantitative Analysis&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.quantitative_report}}</b></p>
-                    <p><b>Prime Options</b></p>
-                           <p class="card-text"><input type="radio" name="price"  value="{{report.single_user_price}}"> Single User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.single_user_price}}</b></p>
+                           <p class="card-text"><input type="radio" name="price"  value="{{report.quantitative_report}}"> Quantitative Analysis<b style="color:#039bd8;float:right;margin-right:13px;">${{report.quantitative_report}}</b></p>
+                    <p><b class="card-text">Prime Options</b></p>
+                           <p class="card-text"><input type="radio" name="price"  value="{{report.single_user_price}}"> Single User<b style="color:#039bd8;float:right;margin-right:13px;">${{report.single_user_price}}</b></p>
                     <hr>
-                      <p class="card-text"><input type="radio" name="price"  value="{{report.multi_user_price}}"> Multi User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.multi_user_price}}</b></p>
+                      <p class="card-text"><input type="radio" name="price"  value="{{report.multi_user_price}}"> Multi User<b style="color:#039bd8;float:right;margin-right:13px;">${{report.multi_user_price}}</b></p>
                     <hr>
-                          <p class="card-text" ><input type="radio" name="price" value="{{report.corporate_user_price}}"> Corporate User&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#039bd8">${{report.corporate_user_price}}</b></p>
+                          <p class="card-text" ><input type="radio" name="price" value="{{report.corporate_user_price}}"> Corporate User<b style="color:#039bd8;float:right;margin-right:13px;">${{report.corporate_user_price}}</b></p>
                      <hr style="color:white;">
 
                        <button type="submit" class="button-animated btn-block"><i class="fas fa-shopping-cart"></i>&nbsp;<strong>Buy Now</strong></button>
@@ -312,7 +324,7 @@
     }
   </style>
 
-  <div class="card callout mobileuifont" style="width: 334px;">
+  <div class="card callout mobileuifont">
     <div class="panel-group" id="reletedreports">
       <div class="panel panel-primary">
         <div class="card-header" style="background-color:#0b9ad7;color:white;"><b style="font-size:20px;">Why WMR ?</b></div>
